@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agendamento</title>
+
+    <link rel="stylesheet" href="agendamento.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <h1>Agendamento</h1>
+    </header>
+
+    <div class="container-principal">
+
+        <!-- MENU LATERAL -->
+        <aside class="barra-lateral">
+
+            <nav>
+                <ul>
+                    <img src="logo.jpg" alt="logo da clínica" class="logo">
+                    <li><a href="inicio.html">Início</a></li>
+                    <li><a href="agendamento.html">Agendamento</a></li>
+                    <li><a href="prontuario.html">Prontuário</a></li>
+                    <li><a href="historico.html">Histórico</a></li>
+                    <li><a href="controle-vacina.html">Controle de vacina</a></li>
+                    <li><a href="cade-meu-pet.html">Cadê meu pet?</a></li>
+                </ul>
+            </nav>
+
+            <div class="card">
+                <h4>Central Veterinária</h4>
+                <p>Vacinação, protocolos e alertas em um só lugar.</p>
+            </div>
+
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main>
+
+            <!-- INSTRUÇÕES -->
+            <section class="tipo">
+                <h4>Escolha o tipo de consulta e o pet para agendar</h4>
+
+                <p>
+                    Selecione o tipo de atendimento, o pet que será atendido
+                    e escolha o dia e horário disponível.
+                </p>
+            </section>
+
+            <!-- FORMULÁRIO DE AGENDAMENTO -->
+            <form id="formAgendamento" class="formulario">
+
+                <!-- TIPO DE CONSULTA -->
+                <section class="consulta">
+
+                    <h5>Tipo de Consulta:</h5>
+
+                    <input type="radio" id="rotina"
+                        name="consulta" value="Rotina" required>
+                    <label for="rotina">
+                        <i class="fa-solid fa-stethoscope"></i>
+                        Rotina
+                    </label>
+
+                    <input type="radio" id="emergencia"
+                        name="consulta" value="Emergência">
+                    <label for="emergencia">
+                        <i class="fa-solid fa-truck-medical"></i>
+                        Emergência
+                    </label>
+
+                    <input type="radio" id="preventiva"
+                        name="consulta" value="Preventiva">
+                    <label for="preventiva">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        Preventiva
+                    </label>
+
+                    <input type="radio" id="especializada"
+                        name="consulta" value="Especializada">
+                    <label for="especializada">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        Especializada
+                    </label>
+
+                    <input type="radio" id="comportamental"
+                        name="consulta" value="Comportamental">
+                    <label for="comportamental">
+                        <i class="fa-solid fa-brain"></i>
+                        Comportamental
+                    </label>
+
+                </section>
+
+                <!-- IDENTIFICAÇÃO DO PET -->
+                <section class="rga">
+
+                    <label for="rga">
+                        RGA (Registro Geral de Animais):
+                    </label>
+
+                    <input
+                        type="number"
+                        id="rga"
+                        name="rga"
+                        placeholder="Digite o RGA sem pontos ou traços"
+                        maxlength="10"
+                        required
+                        title="Digite o RGA no formato 00000000">
+                </section>
+
+                <!-- DATA E HORÁRIO -->
+                <section class="data-hora">
+
+                    <div class="campo">
+
+                        <label for="data">Data:</label>
+
+                        <input
+                            type="date"
+                            id="data"
+                            name="data"
+                            required>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="horario">Horário:</label>
+
+                        <input
+                            type="time"
+                            id="horario"
+                            name="horario"
+                            required>
+
+                    </div>
+
+                </section>
+
+                <!-- OBSERVAÇÕES -->
+                <section class="observacao">
+
+                    <label for="observacao">Observações:</label>
+
+                    <textarea
+                        id="observacao"
+                        name="observacao"
+                        rows="4"
+                        placeholder="Digite aqui qualquer observação adicional...">
+                    </textarea>
+
+                </section>
+
+                <!-- BOTÕES -->
+                <section class="botoes-acao">
+
+                    <button type="reset" id="btnCancelar">
+                        Cancelar
+                    </button>
+
+                    <button type="submit">
+                        Agendar
+                    </button>
+
+                </section>
+
+            </form>
+
+        </main>
+
+        <!-- RODAPÉ -->
+        <footer>
+
+            <div class="redes-sociais">
+
+                <strong>Redes Sociais:</strong>
+
+                <a href="https://www.instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
+                </a>
+
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+
+                <a href="https://www.linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-linkedin">
+                    <i class="fa-brands fa-linkedin"></i>
+                    LinkedIn
+                </a>
+
+            </div>
+
+            <span>
+                &copy; 2026 Clínica Vida & Saúde Veterinária.
+                Todos os direitos reservados.
+            </span>
+
+        </footer>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="agendamento.js"></script>
+
+</body>
+</html>

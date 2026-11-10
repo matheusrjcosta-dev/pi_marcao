@@ -1,0 +1,349 @@
+/* ==========================================================================
+   1. RESET E ESTRUTURA GERAL (GRID BASE)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main"
+        "sidebar footer";
+    min-height: 100vh;
+    background-color: #f4f6fc;
+    color: #333333;
+}
+
+.container-principal {
+    display: contents; /* Mantém as suas tags HTML na grelha principal */
+}
+
+/* ==========================================================================
+   2. BARRA LATERAL (ASIDE)
+   ========================================================================== */
+.barra-lateral {
+    grid-area: sidebar;
+    background-color: #0a178e;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 20px;
+}
+.logo {
+    opacity: 1.0;
+    width: 100%;           
+    max-width: 130px;      
+    height: auto;          
+    display: block;
+    margin: 0 auto;      
+    object-fit: contain;
+    padding: 20px 15px;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo-sidebar {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.barra-lateral nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.barra-lateral a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.barra-lateral li:nth-child(2) a,
+.barra-lateral a:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.barra-lateral li:nth-child(2) a::after {
+    content: "›";
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+.barra-lateral .card {
+    margin-top: auto;
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.barra-lateral .card h4 { font-size: 0.9rem; margin-bottom: 6px; color: #ffffff; }
+.barra-lateral .card p { font-size: 0.78rem; opacity: 0.85; }
+
+/* ==========================================================================
+   3. CABEÇALHO
+   ========================================================================== */
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px 12px 32px;
+}
+
+header h1 {
+    color: #0a178e;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+/* ==========================================================================
+   4. CONTEÚDO PRINCIPAL (MAIN E FORMULÁRIO)
+   ========================================================================== */
+main {
+    grid-area: main;
+    padding: 12px 32px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Formulário como contentor flexível para empilhar as secções e permitir alinhamentos */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Banner de instruções */
+.tipo {
+    background-color: #0a178e;
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 24px 32px;
+}
+
+.tipo h4 { font-size: 1.2rem; margin-bottom: 6px; }
+.tipo p { font-size: 0.88rem; opacity: 0.9; }
+
+/* ==========================================================================
+   5. CARTÕES DOS CAMPOS (BRANCOS COM SOMBRA)
+   ========================================================================== */
+.formulario, .rga, .data-hora, .observacao {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+label, .formulario h5 {
+    color: #0a178e;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* --- TIPO DE CONSULTA (RADIO BUTTONS) --- */
+.formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.formulario h5 { width: 100%; margin-bottom: 4px; }
+.formulario input[type="radio"] { display: none; }
+
+.formulario label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background-color: #f4f6fc;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    color: #4a5568;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 0;
+}
+
+.formulario label i { color: #0a178e; font-size: 1rem; }
+.formulario label:hover { border-color: #0a178e; background-color: #eef5fc; }
+
+.formulario input[type="radio"]:checked + label {
+    background-color: #0a178e;
+    border-color: #0a178e;
+    color: #ffffff;
+}
+.formulario input[type="radio"]:checked + label i { color: #ffffff; }
+
+/* --- INPUTS DE TEXTO, DATA, HORA E TEXTAREA --- */
+input[type="number"], input[type="date"], input[type="time"], textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px 16px;
+    border: 1px solid #d8e2ec;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333333;
+    outline: none;
+    transition: border-color 0.2s;
+    background-color: #ffffff;
+}
+
+textarea {
+    max-width: 100%;
+    resize: vertical;
+}
+
+input:focus, textarea:focus {
+    border-color: #0a178e;
+    box-shadow: 0 0 0 3px rgba(10, 23, 142, 0.15);
+}
+
+/* --- DATA E HORA LADO A LADO --- */
+.data-hora {
+    display: flex;
+    gap: 20px;
+    max-width: 500px;
+}
+
+.data-hora .campo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-hora .campo input {
+    max-width: 100%;
+}
+
+/* ==========================================================================
+   6. BOTÕES DE AÇÃO (ALINHADOS À DIREITA)
+   ========================================================================== */
+.botoes-acao {
+    display: flex;
+    gap: 16px;
+    align-self: flex-end; /* Empurra a caixa dos botões para a direita do formulário */
+    margin-top: 10px;
+}
+
+.botoes-acao button {
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 14px 40px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+}
+
+/* Botão Cancelar (Reset) */
+button[type="reset"] {
+    background-color: #e5e8eb;
+    color: #0a178e;
+}
+
+button[type="reset"]:hover {
+    background-color: #d1d5db;
+}
+
+/* Botão Agendar (Submit) */
+button[type="submit"] {
+    background-color: #0a178e;
+    color: #ffffff;
+}
+
+button[type="submit"]:hover {
+    background-color: #004d99;
+}
+
+/* ==========================================================================
+   7. RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    grid-area: footer;
+    background-color: #0a178e;
+    color: #ffffff;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.redes-sociais {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.redes-sociais a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.redes-sociais a:hover { opacity: 0.8; }
+footer span { font-size: 0.8rem; opacity: 0.8; }
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+   ========================================================================== */
+@media (max-width: 900px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .data-hora {
+        flex-direction: column;
+        gap: 16px;
+        max-width: 100%;
+    }
+
+    input[type="text"], input[type="date"], input[type="time"] {
+        max-width: 100%;
+    }
+
+    .botoes-acao {
+        align-self: center; /* Centra os botões no telemóvel */
+        flex-direction: column-reverse; /* Coloca o "Agendar" por cima do "Cancelar" */
+        width: 100%;
+    }
+
+    .botoes-acao button {
+        width: 100%;
+    }
+}
