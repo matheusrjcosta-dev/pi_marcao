@@ -1,0 +1,114 @@
+<!-- define como html5 -->
+<!DOCTYPE HTML5>
+
+<!-- lingua padão da pagina -->
+<html lang="pt-br">
+
+    <!-- config -->
+    <head>
+        <meta charset="UTF-8"> <!-- Garante que carateres da língua portuguesa (como ã, ç, é, ô) e símbolos especiais sejam exibidos corretamente -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- estabelece o tamanho da viewport(tamanho da tela) -->
+        <meta name="description" content="pagina de login do sistema."> <!-- descreve o conteúdo da página -->
+        <meta name="keywords" content="metategs, SEO, acessibilidade, mecanismos de busca, html"> <!-- garante o contúdo da página -->
+        <meta name="author" content="Luís Ito"> <!-- adiciona o autor da página -->
+        <meta name="language" content="pt-br"> <!-- define o idioma da página -->
+
+        <!-- titulo do sistema -->
+        <title>Login</title>
+
+        <!-- icone do sistema -->
+        <link rel="icon" href="icone.png" type="image/x-icon">
+        <!-- link para o estilo CSS -->
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+
+    <!-- conteúdo da página -->
+    <body>
+        <!-- cabecalho -->
+        <header>
+            <h1>Seja Bem-vindo</h1>
+
+            <section class="Entrar">
+                <!-- botão de login --> 
+                <button type="button" onclick="exibirSecao('login')">Entrar</button>
+            </section>
+            <!-- botão de registro -->
+            <section class="Registrar">
+                <button type="button" onclick="exibirSecao('registro')">Registro</button>
+            </section>
+        </header>
+
+        <div class="container-principal">
+        <aside class="barra-lateral">
+            <nav class="logo">
+                <a href="logo.jpg" target="_blank"><img src="logo.jpg" alt="Logo do Sistema"></a>
+            </nav>
+        </aside>
+
+        <!-- conteúdo principal -->
+        <main>
+            <!-- seção de login-->
+            <section id="secao-login" class="secao-form">
+                <h2>Login</h2>
+                <form action="login.php" method="post">
+                    <!-- usuário -->
+                    <label for="usuario">Usuário:</label>
+                    <input type="text" id="usuario" name="usuario" required><br><br>
+
+                    <!-- senha -->
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required><br><br>
+
+                    <!-- salvar login -->
+                        <label class="remember-me">
+                            <input type="checkbox"> Relembre-me
+                        </label>
+                        <!-- esqueci minha senha -->
+                        <a href="#" class="forgot-password">Esqueci minha senha?</a>
+
+                    <!-- botões -->
+                        <button type="button" class="btn-secondary">Voltar</button>
+                        <button type="submit" class="btn-primary">Entrar</button>
+                </form>
+            </section>
+            <!-- seção de registro -->
+            <section id="secao-registro" class="secao-form">
+                <h2>Registro</h2>
+                <form action="registro.php" method="post">
+                    <label for="novo_email">Email:</label>
+                    <input type="email" id="novo_email" name="novo_email" required><br><br>
+
+                    <label for="CRMV">CRMV:</label>
+                    <input type="number" id="CRMV" name="CRMV" required><br><br>
+
+                    <label for="Nome">Nome:</label>
+                    <input type="text" id="Nome" name="Nome" required><br><br>
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required><br><br>
+
+                    <label for="confirmar_senha">Confirmar Senha:</label>
+                    <input type="password" id="confirmar_senha" name="confirmar_senha" required><br><br>
+
+                    <input type="submit" value="Cadastrar">
+                </form>
+            </section>
+        </main> 
+
+        <!-- Script simples de alternância -->
+        <script>
+            function exibirSecao(secao) {
+                // Esconde ambas as seções
+                document.getElementById('secao-login').classList.remove('ativa');
+                document.getElementById('secao-registro').classList.remove('ativa');
+
+                // Exibe apenas a seção solicitada
+                if (secao === 'login') {
+                    document.getElementById('secao-login').classList.add('ativa');
+                } else if (secao === 'registro') {
+                    document.getElementById('secao-registro').classList.add('ativa');
+                }
+            }
+        </script>
+    </body>
+</html>
