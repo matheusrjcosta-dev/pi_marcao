@@ -1,114 +1,194 @@
-<!-- define como html5 -->
-<!DOCTYPE HTML5>
+<!-- ==============================================================================
+    pagina de login do sistema veterinário
+================================================================================ -->
 
-<!-- lingua padão da pagina -->
-<html lang="pt-br">
+<!-- define que será html5 -->
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- define o idioma como português do Brasil -->
 
-    <!-- config -->
-    <head>
-        <meta charset="UTF-8"> <!-- Garante que carateres da língua portuguesa (como ã, ç, é, ô) e símbolos especiais sejam exibidos corretamente -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- estabelece o tamanho da viewport(tamanho da tela) -->
-        <meta name="description" content="pagina de login do sistema."> <!-- descreve o conteúdo da página -->
-        <meta name="keywords" content="metategs, SEO, acessibilidade, mecanismos de busca, html"> <!-- garante o contúdo da página -->
-        <meta name="author" content="Luís Ito"> <!-- adiciona o autor da página -->
-        <meta name="language" content="pt-br"> <!-- define o idioma da página -->
+<!-- ==============================================================================
+       configurações da página do documento
+    ================================================================================ -->
 
-        <!-- titulo do sistema -->
-        <title>Login</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="icone.png" type="image/x-icon">
+    <link rel="stylesheet" href="login.css">
+</head>
 
-        <!-- icone do sistema -->
-        <link rel="icon" href="icone.png" type="image/x-icon">
-        <!-- link para o estilo CSS -->
-        <link rel="stylesheet" href="estilo.css">
-    </head>
+<!-- ==============================================================================
+            Corpo do Documento
+        ================================================================================ -->
 
-    <!-- conteúdo da página -->
-    <body>
-        <!-- cabecalho -->
-        <header>
-            <h1>Seja Bem-vindo</h1>
+<body>
+    <div class="container-principal">
 
-            <section class="Entrar">
-                <!-- botão de login --> 
-                <button type="button" onclick="exibirSecao('login')">Entrar</button>
-            </section>
-            <!-- botão de registro -->
-            <section class="Registrar">
-                <button type="button" onclick="exibirSecao('registro')">Registro</button>
-            </section>
-        </header>
+        <!-- ==============================================================================
+                Barra Lateral com Logo
+             ================================================================================ -->
 
-        <div class="container-principal">
         <aside class="barra-lateral">
-            <nav class="logo">
-                <a href="logo.jpg" target="_blank"><img src="logo.jpg" alt="Logo do Sistema"></a>
-            </nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="Logo do Sistema">
+            </div>
         </aside>
 
-        <!-- conteúdo principal -->
+        <!-- ==============================================================================
+                Conteúdo Principal
+             ================================================================================ -->
+
         <main>
-            <!-- seção de login-->
-            <section id="secao-login" class="secao-form">
-                <h2>Login</h2>
-                <form action="login.php" method="post">
-                    <!-- usuário -->
-                    <label for="usuario">Usuário:</label>
-                    <input type="text" id="usuario" name="usuario" required><br><br>
+            <div class="conteudo-central">
 
-                    <!-- senha -->
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required><br><br>
+                <!-- ==============================================================================
+                        Cabeçalho e Toggle de Seções
+                     ================================================================================ -->
 
-                    <!-- salvar login -->
-                        <label class="remember-me">
-                            <input type="checkbox"> Relembre-me
-                        </label>
-                        <!-- esqueci minha senha -->
-                        <a href="#" class="forgot-password">Esqueci minha senha?</a>
+                <!-- Cabeçalho -->
+                <header class="cabecalho-principal">
+                    <h1>Seja bem-vindo</h1>
 
-                    <!-- botões -->
-                        <button type="button" class="btn-secondary">Voltar</button>
-                        <button type="submit" class="btn-primary">Entrar</button>
-                </form>
-            </section>
-            <!-- seção de registro -->
-            <section id="secao-registro" class="secao-form">
-                <h2>Registro</h2>
-                <form action="registro.php" method="post">
-                    <label for="novo_email">Email:</label>
-                    <input type="email" id="novo_email" name="novo_email" required><br><br>
+                    <!-- Toggle estilo Pílula -->
+                    <div class="botoes-toggle">
+                        <button type="button" id="btn-toggle-login" class="btn-toggle ativo"
+                            onclick="exibirSecao('login')">Entrar</button>
+                        <button type="button" id="btn-toggle-registro" class="btn-toggle"
+                            onclick="exibirSecao('registro')">Registrar</button>
+                    </div>
 
-                    <label for="CRMV">CRMV:</label>
-                    <input type="number" id="CRMV" name="CRMV" required><br><br>
+                    <p class="subtitulo">Insira os seus dados para aceder à plataforma.</p>
+                </header>
 
-                    <label for="Nome">Nome:</label>
-                    <input type="text" id="Nome" name="Nome" required><br><br>
+                <!-- ==============================================================================
+                        formulários de Login e Registro
+                     ================================================================================ -->
 
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required><br><br>
+                <!-- Formulário de Login -->
+                <section id="secao-login" class="secao-form ativa">
+                    <form action="login.php" method="post">
+                        <div class="campo-grupo">
+                            <label for="usuario">Nome</label>
+                            <input type="text" id="usuario" name="usuario" placeholder="Insira seu nome de usuário"
+                                required>
+                        </div>
 
-                    <label for="confirmar_senha">Confirmar Senha:</label>
-                    <input type="password" id="confirmar_senha" name="confirmar_senha" required><br><br>
+                        <div class="campo-grupo">
+                            <label for="senha">Senha</label>
+                            <div class="input-com-icone">
+                                <input type="password" id="senha" name="senha" placeholder="Insira sua senha" required>
+                            </div>
+                        </div>
 
-                    <input type="submit" value="Cadastrar">
-                </form>
-            </section>
-        </main> 
+                        <div class="opcoes-login">
+                            <label class="remember-me">
+                                <input type="checkbox" name="lembrar">
+                                <span>Relembre-me</span>
+                            </label>
+                            <a href="#" class="forgot-password">Esqueci minha senha?</a>
+                        </div>
 
-        <!-- Script simples de alternância -->
-        <script>
-            function exibirSecao(secao) {
-                // Esconde ambas as seções
-                document.getElementById('secao-login').classList.remove('ativa');
-                document.getElementById('secao-registro').classList.remove('ativa');
+                        <div class="botoes-acao">
+                            <button type="button" class="btn-voltar">Voltar</button>
+                            <button type="submit" class="btn-entrar">Entrar</button>
+                        </div>
+                    </form>
+                </section>
 
-                // Exibe apenas a seção solicitada
-                if (secao === 'login') {
-                    document.getElementById('secao-login').classList.add('ativa');
-                } else if (secao === 'registro') {
-                    document.getElementById('secao-registro').classList.add('ativa');
-                }
+                <!-- Formulário de Registro -->
+                <section id="secao-registro" class="secao-form">
+                    <form action="registro.php" method="post">
+                        <div class="campo-grupo">
+                            <label for="novo_email">Email</label>
+                            <input type="email" id="novo_email" name="novo_email" placeholder="Insira o seu email"
+                                required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="rga">RGA (até 9 dígitos)</label>
+                            <input type="text" id="rga" name="rga" inputmode="numeric" maxlength="9" pattern="[0-9]*"
+                                placeholder="Ex: 123456789" required
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Insira o seu nome completo" required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="nova_senha">Senha</label>
+                            <input type="password" id="nova_senha" name="nova_senha" placeholder="Insira a sua senha"
+                                required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="confirmar_senha">Confirmar Senha</label>
+                            <input type="password" id="confirmar_senha" name="confirmar_senha"
+                                placeholder="Confirme a sua senha" required>
+                        </div>
+
+                        <div class="botoes-acao">
+                            <button type="button" class="btn-voltar" onclick="exibirSecao('login')">Voltar</button>
+                            <button type="submit" class="btn-entrar">Cadastrar</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- ==============================================================================
+            script para controle das seções
+        ================================================================================ -->
+    <script>
+        function exibirSecao(secao) {
+            // Esconde as seções
+            document.getElementById('secao-login').classList.remove('ativa');
+            document.getElementById('secao-registro').classList.remove('ativa');
+
+            // Reseta os botões da pílula
+            document.getElementById('btn-toggle-login').classList.remove('ativo');
+            document.getElementById('btn-toggle-registro').classList.remove('ativo');
+
+            // Activa a seção e o botão correspondente
+            if (secao === 'login') {
+                document.getElementById('secao-login').classList.add('ativa');
+                document.getElementById('btn-toggle-login').classList.add('ativo');
+            } else if (secao === 'registro') {
+                document.getElementById('secao-registro').classList.add('ativa');
+                document.getElementById('btn-toggle-registro').classList.add('ativo');
             }
-        </script>
-    </body>
+        }
+
+    </script>
+
+    <!-- ==============================================================================
+            rodapé do documento
+        ================================================================================ -->
+
+    <footer>
+        <div class="redes-sociais">
+            <strong>Redes Sociais:</strong>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+            </a>
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank"
+                rel="noopener noreferrer" class="btn-whatsapp">
+                <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
+                WhatsApp
+            </a>
+            <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer"
+                class="btn-linkedin">
+                <i class="fa-brands fa-linkedin" style="font-size: 20px;"></i>
+                LinkedIn
+            </a>
+        </div>
+        <section class="final"></section>
+        <span>&copy; 2026 Clínica Vida & Saúde Veterinária. Todos os direitos reservados.</span>
+    </footer>
+</body>
+
 </html>

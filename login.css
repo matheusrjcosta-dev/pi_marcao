@@ -1,0 +1,283 @@
+/* ========================================================
+    * Estilo CSS para o Sistema Veterinário
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================================
+    * Estilo para o corpo e html
+========================================================= */
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #262626; /* Fundo escuro em redor da janela */
+}
+
+.container-principal {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* =========================================================
+    * Estilo para a Barra Lateral Azul e Conteúdo Central
+========================================================= */
+
+.barra-lateral {
+    grid-area: sidebar;
+    background-color: #0a178e;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 20px;
+}
+.logo {
+    opacity: 1.0;
+    width: 100%;           
+    max-width: 130px;      
+    height: auto;          
+    display: block;
+    margin: 0 auto;      
+    object-fit: contain;
+    padding: 20px 15px;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo-sidebar {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =========================================================
+    * Estilo para o Conteúdo Central
+========================================================= */    
+
+/* 2. Conteúdo Central */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.conteudo-central {
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================================
+    * Estilo para Cabeçalho, Toggle Pílula e Formulários
+========================================================= */
+
+/* 3. Cabeçalho e Toggle Pílula */
+.cabecalho-principal {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cabecalho-principal h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #111;
+    margin-bottom: 24px;
+}
+
+.botoes-toggle {
+    display: inline-flex;
+    background-color: #0d1282;
+    border-radius: 40px;
+    padding: 4px;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto 16px auto;
+}
+
+.btn-toggle {
+    flex: 1;
+    padding: 12px 0;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-toggle.ativo {
+    background-color: #030637; /* Tom mais escuro no item ativo */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.subtitulo {
+    color: #777;
+    font-size: 0.85rem;
+}
+
+/* =========================================================
+    * Estilo para Formulários, Checkbox e Botões Inferiores 
+========================================================= */
+
+/* 4. Formulários */
+.secao-form {
+    display: none;
+    width: 100%;
+}
+
+.secao-form.ativa {
+    display: block;
+}
+
+.campo-grupo {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-grupo label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.campo-grupo input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #dcdcdc;
+    border-radius: 30px; /* Campos arredondados igual ao layout */
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.campo-grupo input:focus {
+    border-color: #0d1282;
+}
+
+/* 5. Checkbox e "Esqueci minha senha" */
+.opcoes-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 10px 35px 10px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+}
+
+.remember-me input {
+    width: 18px;
+    height: 18px;
+}
+
+.forgot-password {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* 6. Botões inferiores (Voltar / Entrar) */
+.botoes-acao {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.btn-voltar, .btn-entrar {
+    flex: 1;
+    max-width: 180px;
+    padding: 14px 0;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+}
+
+.btn-voltar {
+    background-color: #0d1282;
+    color: white;
+}
+
+.btn-entrar {
+    background-color: #0d1282;
+    color: white;
+    margin-left: auto;
+}
+
+.btn-voltar:hover, .btn-entrar:hover {
+    opacity: 0.9;
+}
+
+/* ==========================================================================
+   Estilo para o Rodapé
+   ========================================================================== */
+footer {
+    grid-area: footer;
+    background-color: #0a178e;
+    color: #ffffff;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.redes-sociais {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+footer span {
+    margin-left: auto;
+    font-size: 0.82rem;
+    opacity: 0.85;
+    font-weight: 600;
+}
+
+footer a, 
+footer a:visited, 
+footer a:active {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+}
+
+footer a:hover {
+    opacity: 0.8;
+}

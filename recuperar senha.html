@@ -1,0 +1,68 @@
+<!-- ==============================================================================
+    pagina de recuperação de senha do sistema veterinário
+================================================================================ -->
+       
+<!-- define que será html5 -->
+<!DOCTYPE html5>
+<html lang="pt-br"> <!-- define o idioma como português do Brasil -->
+    
+    <!-- ==============================================================================
+       configurações da página do documento
+    ================================================================================ -->
+       
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recuperar Senha</title>
+        <link rel="icon" href="icone.png" type="image/x-icon">
+        <link rel="stylesheet" href="recuperar senha.css">
+    </head>
+
+    <!-- ==============================================================================
+        Corpo do Documento
+    ================================================================================ -->
+
+    <body>
+        <div class="container-principal">
+
+            <!-- ==============================================================================
+                Barra Lateral com Logo
+             ================================================================================ -->
+
+            <aside class="barra-lateral">
+                <div class="logo">
+                    <img src="logo.jpg" alt="Logo do Sistema">
+                </div>
+            </aside>
+
+            <!-- ==============================================================================
+                Conteúdo Principal
+             ================================================================================ -->
+
+            <main>
+                <div class="conteudo-central">
+
+                    <!-- ==============================================================================
+                        Cabeçalho e Toggle de Seções
+                     ================================================================================ -->
+
+                    <!-- Cabeçalho -->
+                    <header class="cabecalho-principal">
+                        <h1>Recuperar Senha</h1>
+                    </header>
+
+                    <!-- Formulário de Recuperação de Senha -->
+                    <section class="secao-form ativo" id="secao-recuperar-senha">
+                        <form action="recuperar senha.php" method="POST">
+                            <div class="campo-formulario">
+                                <label for="email">E-mail:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <button type="submit">Recuperar Senha</button>
+                        </form>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+/* ========================================================
+    * Estilo CSS para o Sistema Veterinário
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================================================
+    * Estilo para o corpo e html
+========================================================= */
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #262626; /* Fundo escuro em redor da janela */
+}
+
+.container-principal {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* =========================================================
+    * Estilo para a Barra Lateral Azul e Conteúdo Central
+========================================================= */
+
+.barra-lateral {
+    grid-area: sidebar;
+    background-color: #0a178e;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 20px;
+}
+.logo {
+    opacity: 1.0;
+    width: 100%;           
+    max-width: 130px;      
+    height: auto;          
+    display: block;
+    margin: 0 auto;      
+    object-fit: contain;
+    padding: 20px 15px;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo-sidebar {
+    width: 120px;
+    height: auto;
+    object-fit: contain;57 
+}7/8                                                                                                       
