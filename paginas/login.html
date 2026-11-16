@@ -1,0 +1,199 @@
+<!-- ==============================================================================
+    pagina de login do sistema veterinário
+================================================================================ -->
+
+<!-- define que será html5 -->
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- define o idioma como português do Brasil -->
+
+<!-- ==============================================================================
+       configurações da página do documento
+    ================================================================================ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- estabelece o tamanho da viewport(tamanho da tela) -->
+    <meta name="description" content="pagina de codigo de recuperação de senha do sistema."> <!-- descreve o conteúdo da página -->
+    <meta name="keywords" content="metategs, SEO, acessibilidade, mecanismos de busca, html"> <!-- garante o contúdo da página -->
+    <meta name="author" content="Luís Ito"> <!-- adiciona o autor da página -->
+    <meta name="language" content="pt-br"> <!-- define o idioma da página -->
+    
+    <title>Login</title> <!-- titulo do sistema -->
+    <link rel="icon" href="/imagens/icone.png" type="image/x-icon"> <!-- adiciona o ícone do sistema -->
+    <link rel="stylesheet" href="/css/login.css"> <!-- adiciona o arquivo de estilo CSS -->
+</head>
+
+<!-- ==============================================================================
+            Corpo do Documento
+        ================================================================================ -->
+
+<body>
+    <div class="container-principal">
+
+        <!-- ==============================================================================
+                Barra Lateral com Logo
+             ================================================================================ -->
+
+        <aside class="barra-lateral">
+            <div class="logo">
+                <img src="/imagens/logo.jpg" alt="Logo do Sistema">
+            </div>
+        </aside>
+
+        <!-- ==============================================================================
+                Conteúdo Principal
+             ================================================================================ -->
+
+        <main>
+            <div class="conteudo-central">
+
+                <!-- ==============================================================================
+                        Cabeçalho e Toggle de Seções
+                     ================================================================================ -->
+
+                <!-- Cabeçalho -->
+                <header class="cabecalho-principal">
+                    <h1>Seja bem-vindo</h1>
+
+                    <!-- Toggle estilo Pílula -->
+                    <div class="botoes-toggle">
+                        <button type="button" id="btn-toggle-login" class="btn-toggle ativo"
+                            onclick="exibirSecao('login')">Entrar</button>
+                        <button type="button" id="btn-toggle-registro" class="btn-toggle"
+                            onclick="exibirSecao('registro')">Registrar</button>
+                    </div>
+
+                    <p class="subtitulo">Insira os seus dados para aceder à plataforma.</p>
+                </header>
+
+                <!-- ==============================================================================
+                        formulários de Login e Registro
+                     ================================================================================ -->
+
+                <!-- Formulário de Login -->
+                <section id="secao-login" class="secao-form ativa">
+                    <form action="login.php" method="post">
+                        <div class="campo-grupo">
+                            <label for="usuario">Nome</label>
+                            <input type="text" id="usuario" name="usuario" placeholder="Insira seu nome de usuário"
+                                required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="senha">Senha</label>
+                            <div class="input-com-icone">
+                                <input type="password" id="senha" name="senha" placeholder="Insira sua senha" required>
+                            </div>
+                        </div>
+
+                        <div class="opcoes-login">
+                            <label class="remember-me">
+                                <input type="checkbox" name="lembrar">
+                                <span>Relembre-me</span>
+                            </label>
+                            <a href="/paginas/recuperar senha.html" class="forgot-password">Esqueci minha senha?</a>
+                        </div>
+
+                        <div class="botoes-acao">
+                            <a href="/paginas/inicio.html" class="btn-pilula btn-escuro" onclick="history.back()">Voltar</a>
+                            <button type="submit" class="btn-pilula btn-azul">Entrar</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Formulário de Registro -->
+                <section id="secao-registro" class="secao-form">
+                    <form action="registro.php" method="post">
+                        <div class="campo-grupo">
+                            <label for="novo_email">Email</label>
+                            <input type="email" id="novo_email" name="novo_email" placeholder="Insira o seu email"
+                                required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="rga">RGA (até 9 dígitos)</label>
+                            <input type="text" id="rga" name="rga" inputmode="numeric" maxlength="9" pattern="[0-9]*"
+                                placeholder="Ex: 123456789" required
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Insira o seu nome completo" required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="nova_senha">Senha</label>
+                            <input type="password" id="nova_senha" name="nova_senha" placeholder="Insira a sua senha"
+                                required>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="confirmar_senha">Confirmar Senha</label>
+                            <input type="password" id="confirmar_senha" name="confirmar_senha"
+                                placeholder="Confirme a sua senha" required>
+                        </div>
+
+                        <div class="botoes-acao">
+                            <button  type="button" class="btn-pilula btn-escuro" onclick="exibirSecao('login')">Voltar</button>
+                            <button type="submit" class="btn-pilula btn-azul">Cadastrar</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- ==============================================================================
+            script para controle das seções
+        ================================================================================ -->
+    <script>
+        function exibirSecao(secao) {
+            // Esconde as seções
+            document.getElementById('secao-login').classList.remove('ativa');
+            document.getElementById('secao-registro').classList.remove('ativa');
+
+            // Reseta os botões da pílula
+            document.getElementById('btn-toggle-login').classList.remove('ativo');
+            document.getElementById('btn-toggle-registro').classList.remove('ativo');
+
+            // Activa a seção e o botão correspondente
+            if (secao === 'login') {
+                document.getElementById('secao-login').classList.add('ativa');
+                document.getElementById('btn-toggle-login').classList.add('ativo');
+            } else if (secao === 'registro') {
+                document.getElementById('secao-registro').classList.add('ativa');
+                document.getElementById('btn-toggle-registro').classList.add('ativo');
+            }
+        }
+
+    </script>
+
+    <!-- ==============================================================================
+            rodapé do documento
+        ================================================================================ -->
+
+    <footer>
+        <div class="redes-sociais">
+            <strong>Redes Sociais:</strong>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+            </a>
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank"
+                rel="noopener noreferrer" class="btn-whatsapp">
+                <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
+                WhatsApp
+            </a>
+            <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer"
+                class="btn-linkedin">
+                <i class="fa-brands fa-linkedin" style="font-size: 20px;"></i>
+                LinkedIn
+            </a>
+        </div>
+        <section class="final"></section>
+        <span>&copy; 2026 Clínica Vida & Saúde Veterinária. Todos os direitos reservados.</span>
+    </footer>
+</body>
+
+</html>

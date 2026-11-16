@@ -1,0 +1,204 @@
+/* ==========================================================================
+   1. RESET E ESTRUTURA GERAL DO PAINEL (GRID)
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================================================================
+   2. ESTILOS GERAIS PARA A PÁGINA DE RECUPERAÇÃO DE SENHA
+   ========================================================================== */
+
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #262626;
+}
+
+.container-principal {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   3. BARRA LATERAL (ASIDE)
+   ========================================================================== */
+
+.barra-lateral {
+    grid-area: sidebar;
+    background-color: #0a178e;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 20px;
+}
+
+/* Logo da Barra Lateral */
+.logo {
+    opacity: 1.0;
+    width: 100%;           
+    max-width: 130px;      
+    height: auto;          
+    display: block;
+    margin: 0 auto;      
+    object-fit: contain;
+    padding: 20px 15px;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo-sidebar {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   4. CONTEÚDO PRINCIPAL (header, main)
+========================================================================== */
+
+main, .area-recuperacao {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o bloco inteiro na horizontal */
+    padding: 32px 60px;
+    background-color: #ffffff;
+}
+
+/* Cabeçalho */
+main, .area-recuperacao header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+
+/* Botão de Seta de Voltar */
+.btn-seta-voltar {
+    text-decoration: none;
+    color: #030637;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.btn-seta-voltar:hover {
+    transform: translateX(-4px);
+}
+
+/* link */
+main, .area-recuperacao  a:hover {
+    transform: translateX(-4px);
+}
+
+/* título */
+main, .area-recuperacao h1 {
+    color: #2b329b;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 80px;
+}
+
+/* paragrafo */
+main, .area-recuperacao header p {
+    color: #030637;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+/* ======================================================= */
+
+/* Conteúdo Principal */
+form, .vstack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
+}
+
+/* Container dos quadradinhos do código */
+.otp, .otp-inputs {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+/* Estilo individual de cada quadrado de dígito */
+.otp input, .otp-input, .otp-box {
+    width: 85px;
+    height: 75px;
+    border: 1px solid #999999;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #030637;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Estilo para o campo de entrada em foco */
+.otp input:focus, .otp-input:focus, .otp-box:focus {
+    border-color: #0a178e;
+    box-shadow: 0 0 0 3px rgba(10, 23, 142, 0.15);
+}
+
+/* Link "Reenviar Código" */
+main a:not(header a) {
+    color: #2b329b;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+/* estilização do link ao passar o mouse */
+main a:not(header a):hover {
+    text-decoration: underline;
+}
+
+/* Botão Enviar no canto inferior direito */
+.d-grid, .area-botao-enviar {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+}
+
+/* Botão Enviar */
+button[type="submit"], .btn-primary, .btn-enviar {
+    width: 220px;
+    padding: 14px 0;
+    border-radius: 30px;
+    border: none;
+    background-color: #0a178e;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: auto;
+    align-self: flex-end;
+    transition: opacity 0.2s;
+}
+
+/* botão ao passar o mouse */
+button[type="submit"]:hover, .btn-primary:hover, .btn-enviar:hover {
+    opacity: 0.9;
+}

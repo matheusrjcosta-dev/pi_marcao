@@ -1,0 +1,81 @@
+<!-- ==============================================================================
+    pagina de login do sistema veterinário
+================================================================================ -->
+
+<!-- define que será html5 -->
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- define o idioma como português do Brasil -->
+
+    <!-- ==============================================================================
+        configurações da página do documento
+    ================================================================================ -->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- estabelece o tamanho da viewport(tamanho da tela) -->
+        <meta name="description" content="pagina de codigo de recuperação de senha do sistema."> <!-- descreve o conteúdo da página -->
+        <meta name="keywords" content="metategs, SEO, acessibilidade, mecanismos de busca, html"> <!-- garante o contúdo da página -->
+        <meta name="author" content="Luís Ito"> <!-- adiciona o autor da página -->
+        <meta name="language" content="pt-br"> <!-- define o idioma da página -->
+
+        <title>Código de Recuperação</title> <!-- titulo do sistema -->
+        <link rel="icon" href="/imagens/icone.png" type="image/x-icon"> <!-- adiciona o ícone do sistema -->
+        <link rel="stylesheet" href="/css/codigo-de-recuperacao.css"> <!-- adiciona o arquivo de estilo CSS -->
+    </head>
+
+    <!-- ==============================================================================
+            Corpo do Documento
+    ================================================================================ -->
+    <body>
+        <div class="container-principal">
+
+            <!-- ==============================================================================
+                    Barra Lateral com Logo
+            ================================================================================ -->
+            <aside class="barra-lateral">
+                <div class="logo">
+                    <img src="/imagens/logo.jpg" alt="Logo do Sistema">
+                </div>
+            </aside>
+
+            <!-- ==============================================================================
+                Conteúdo Principal
+             ================================================================================ -->
+            <main class="area-recuperacao">
+                <!-- ==============================================================================
+                    Cabeçalho e Toggle de Seções
+                ================================================================================ -->
+                <header>
+                    <div class="btn-seta-voltar">
+                        <a href="/paginas/login.html" class="btn-seta-voltar" aria-label="Voltar">&#8592;</a>
+                    </div>
+                    
+                    <h1>Código de Recuperação</h1>
+                    <p>Insira o código de recuperação enviado para o seu e-mail.</p>
+                </header>
+
+                <!-- ==============================================================================
+                    Conteúdo da Seção de Recuperação
+                ================================================================================ -->
+                <div class="otp-inputs">
+                    <input type="text" maxlength="1" class="otp-input" />
+                    <input type="text" maxlength="1" class="otp-input" />
+                    <input type="text" maxlength="1" class="otp-input" />
+                    <input type="text" maxlength="1" class="otp-input" />
+                    <input type="text" maxlength="1" class="otp-input" />
+                    <input type="text" maxlength="1" class="otp-input" />
+                </div>
+
+                <!-- link de reenvio -->
+                <a href="#" class="link-reenviar" onclick="reenviarCodigo()">Reenviar Código</a>
+
+                <!-- ==============================================================================
+                    Botão de ACÃO
+                ================================================================================ -->
+                <div class="d-grid gap-2 mt-3">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

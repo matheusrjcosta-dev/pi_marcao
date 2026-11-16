@@ -1,0 +1,83 @@
+<!-- ==============================================================================
+    pagina de login do sistema veterinário
+================================================================================ -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <!-- ==============================================================================
+        configurações da página do documento
+        ================================================================================ -->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- estabelece o tamanho da viewport(tamanho da tela) -->
+        <meta name="description" content="pagina de codigo de recuperação de senha do sistema."> <!-- descreve o conteúdo da página -->
+        <meta name="keywords" content="metategs, SEO, acessibilidade, mecanismos de busca, html"> <!-- garante o contúdo da página -->
+        <meta name="author" content="Luís Ito"> <!-- adiciona o autor da página -->
+        <meta name="language" content="pt-br"> <!-- define o idioma da página -->
+
+        <title>Recuperar Senha - Sistema Veterinário</title> <!-- titulo do sistema -->
+        <link rel="icon" href="/imagens/icone.png" type="image/x-icon"> <!-- adiciona o ícone do sistema -->
+        <link rel="stylesheet" href="/css/recuperar senha.css"> <!-- adiciona o arquivo de estilo CSS -->
+    </head>
+
+    <!-- ==============================================================================
+            Corpo do Documento
+        ================================================================================ -->
+
+    <body>
+        <div class="container-principal">
+
+            <!-- ==============================================================================
+                    Barra Lateral com Logo
+                ================================================================================ -->
+            <aside class="barra-lateral">
+                <div class="logo">
+                    <img src="/imagens/logo.jpg" alt="Logo do Sistema">
+                </div>
+            </aside>
+
+            <!-- ==============================================================================
+                Conteúdo Principal
+             ================================================================================ -->
+            <main class="area-recuperacao">
+
+                <!-- ==============================================================================
+                        Cabeçalho e Toggle de Seções
+                     ================================================================================ -->
+                <header class="topo-recuperacao">
+                    <a href="/paginas/login.html" class="btn-seta-voltar" aria-label="Voltar">&#8592;</a>
+                    <h1>Recuperação de Senha</h1>
+                </header>
+                
+                <!-- ==============================================================================
+                        Conteúdo da Seção de Recuperação
+                     ================================================================================ -->
+                <div class="conteudo-recuperacao">
+                    <p class="texto-instrucao">
+                        Preencha seu email abaixo.
+                        Para redefinir sua senha, será
+                        enviado um código de
+                        <strong>verificação</strong> para
+                        recuperação da senha.
+                    </p>
+
+                    <!-- Formulário de Recuperação -->
+                    <form action="enviar_codigo.php" method="post" class="form-recuperacao">
+                        <div class="campo-grupo-rec">
+                            <label for="email_recuperacao">Redefina usando seu e-mail</label>
+                            <input type="email" id="email_recuperacao" name="email_recuperacao" placeholder="email" required>
+                        </div>
+
+                        <!-- Botões de Ação -->
+                        <div class="botoes-recuperacao">
+                            <a href="/paginas/login.html" class="btn-pilula btn-escuro" onclick="history.back()">Voltar</a> <!-- Botão de Voltar -->
+                            <a href="/paginas/codigo-de-recuperação.html" class="btn-pilula btn-azul" onclick="history.back()">Enviar</a> <!-- Botão de Enviar -->
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

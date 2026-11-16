@@ -1,0 +1,191 @@
+/* ==========================================================================
+   1. RESET E ESTRUTURA GERAL DO PAINEL (GRID)
+   ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================================================================
+   2. ESTILOS GERAIS PARA A PÁGINA DE RECUPERAÇÃO DE SENHA
+   ========================================================================== */
+
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #262626;
+}
+
+.container-principal {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   3. BARRA LATERAL (ASIDE)
+   ========================================================================== */
+
+.barra-lateral {
+    grid-area: sidebar;
+    background-color: #0a178e;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 20px;
+}
+
+/* Logo da Barra Lateral */
+.logo {
+    opacity: 1.0;
+    width: 100%;           
+    max-width: 130px;      
+    height: auto;          
+    display: block;
+    margin: 0 auto;      
+    object-fit: contain;
+    padding: 20px 15px;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo-sidebar {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   4. ÁREA DE RECUPERAÇÃO DE SENHA
+   ========================================================================== */
+
+.area-recuperacao {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 48px;
+    background-color: #ffffff;
+}
+
+/* Topo com Seta e Título */
+.topo-recuperacao {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 50px;
+}
+
+.btn-seta-voltar {
+    text-decoration: none;
+    color: #030637;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1;
+    transition: transform 0.2s;
+}
+
+.btn-seta-voltar:hover {
+    transform: translateX(-4px);
+}
+
+/* Título da Área de Recuperação */
+.topo-recuperacao h1 {
+    color: #2b329b;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Bloco Central do Formulário */
+.conteudo-recuperacao {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Texto de Instrução */
+.texto-instrucao {
+    text-align: center;
+    color: #2b329b;
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 60px;
+}
+
+/* Formulário de Recuperação */
+.form-recuperacao {
+    width: 100%;
+}
+
+.campo-grupo-rec {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+.campo-grupo-rec label {
+    color: #030637;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    padding-left: 8px;
+}
+
+.campo-grupo-rec input {
+    width: 100%;
+    padding: 14px 22px;
+    border: 1px solid #999999;
+    border-radius: 30px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.campo-grupo-rec input:focus {
+    border-color: #0a178e;
+}
+
+/* Botões Inferiores em Pílula */
+.botoes-recuperacao {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.btn-pilula {
+    flex: 1;
+    max-width: 210px;
+    padding: 14px 0;
+    border-radius: 30px;
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-escuro {
+    background-color: #030637; /* Azul bem escuro do botão Voltar */
+    text-align: center;
+}
+
+.btn-azul {
+    background-color: #0a178e; /* Azul principal do botão Enviar */
+    text-align: center;
+}
+
+.btn-pilula:hover {
+    opacity: 0.9;
+}
