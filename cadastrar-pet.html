@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Pet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="cadastrar-pet.css">
+</head>
+<body>
+    <header>
+        <button
+            type="button"
+            class="btn-voltar"
+            onclick="window.history.length > 1 ? history.back() : window.location.href='dados-pet.html'"
+            title="Voltar"
+            aria-label="Voltar"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <h1>Cadastrar Pet</h1>
+    </header>
+
+    <aside class="barra-lateral">
+        <div class="topo-lateral">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Logo da clínica" class="logo">
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="inicio.html">Início <span class="seta">&rsaquo;</span></a></li>
+                    <li><a href="agendamento.html">Agendamento</a></li>
+                    <li class="ativo"><a href="dados-pet.html">Pet</a></li>
+                    <li><a href="prontuario.html">Prontuários</a></li>
+                    <li><a href="historico.html">Histórico</a></li>
+                    <li><a href="controle-vacina.html">Controle de vacina</a></li>
+                    <li><a href="cade-meu-pet.html">Cadê meu pet?</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="card">
+            <h4>Central Veterinária</h4>
+            <p>Vacinação, protocolos e alertas em um só lugar.</p>
+        </div>
+    </aside>
+
+    <main>
+        <section class="instrucao">
+            <h2>Registrar Novo Pet</h2>
+            <p>Preencha os dados do seu pet e anexe os documentos solicitados para concluir o cadastro.</p>
+        </section>
+
+        <section class="formulario">
+            <h2>Formulário de Cadastro</h2>
+            <form action="processar-cadastro.php" method="POST" enctype="multipart/form-data">
+                <label for="nome">Nome do Pet:</label>
+                <input type="text" id="nome" name="nome" placeholder="Ex: Beto" required>
+
+                <label for="rga">RGA:</label>
+                <input type="text" id="rga" name="rga" placeholder="Ex: 123456789" required>
+
+                <label for="especie">Espécie:</label>
+                <input type="text" id="especie" name="especie" placeholder="Ex: Cachorro" required>
+
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" min="0" placeholder="Ex: 3" required>
+
+                <label for="documentos">Documentos do Pet (PDF, JPG, PNG):</label>
+                <input type="file" id="documentos" name="documentos[]" accept=".pdf, .jpg, .jpeg, .png" multiple required>
+
+                <label for="pet-foto">Foto do Pet (JPG, PNG):</label>
+                <input type="file" id="pet-foto" name="pet-foto" accept=".jpg, .jpeg, .png" required>
+
+                <div class="botoes-form">
+                    <button type="button" class="btn-cancelar" onclick="window.location.href='dados-pet.html'">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-cadastrar">
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="redes-sociais">
+            <strong>Redes Sociais:</strong>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+        </div>
+
+        <span>
+            &copy; 2026 Clínica Vida &amp; Saúde Veterinária. Todos os direitos reservados.
+        </span>
+    </footer>
+</body>
+</html>

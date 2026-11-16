@@ -30,8 +30,10 @@
             <nav>
                 <ul>
                     <img src="logo.jpg" alt="logo da clínica" class="logo">
+                    <ul style="list-style: none;">
                     <li><a href="inicio.html">Início</a></li>
-                    <li><a href="agendamento.html">Agendamento</a></li>
+                    <li class="ativo"><a href="agendamento.html">Agendamento</a></li>
+                    <li><a href="dados-pet.html">Meus Pets</a></li>
                     <li><a href="prontuario.html">Prontuário</a></li>
                     <li><a href="historico.html">Histórico</a></li>
                     <li><a href="controle-vacina.html">Controle de vacina</a></li>
@@ -67,35 +69,35 @@
 
                     <h5>Tipo de Consulta:</h5>
 
-                    <input type="radio" id="rotina"
+                    <input type="radio" id="rotina" required
                         name="consulta" value="Rotina" required>
                     <label for="rotina">
                         <i class="fa-solid fa-stethoscope"></i>
                         Rotina
                     </label>
 
-                    <input type="radio" id="emergencia"
+                    <input type="radio" id="emergencia" required
                         name="consulta" value="Emergência">
                     <label for="emergencia">
                         <i class="fa-solid fa-truck-medical"></i>
                         Emergência
                     </label>
 
-                    <input type="radio" id="preventiva"
+                    <input type="radio" id="preventiva" required
                         name="consulta" value="Preventiva">
                     <label for="preventiva">
                         <i class="fa-solid fa-shield-heart"></i>
                         Preventiva
                     </label>
 
-                    <input type="radio" id="especializada"
+                    <input type="radio" id="especializada" required
                         name="consulta" value="Especializada">
                     <label for="especializada">
                         <i class="fa-solid fa-user-doctor"></i>
                         Especializada
                     </label>
 
-                    <input type="radio" id="comportamental"
+                    <input type="radio" id="comportamental" required
                         name="consulta" value="Comportamental">
                     <label for="comportamental">
                         <i class="fa-solid fa-brain"></i>
@@ -112,17 +114,13 @@
                     </label>
 
                     <input
-                        type="number"
-                        id="rga"
-                        name="rga"
-                        placeholder="Digite o RGA sem pontos ou traços"
-                        maxlength="10"
-                        required
-                        title="Digite o RGA no formato 00000000">
+                        input type="text" id="rga" name="rga" inputmode="numeric" maxlength="9" pattern="[0-9]*"
+                                placeholder="Ex: 123456789" required
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                 </section>
 
                 <!-- DATA E HORÁRIO -->
-                <section class="data-hora">
+                <section class="data-hora">     
 
                     <div class="campo">
 
@@ -188,7 +186,7 @@
 
                 <strong>Redes Sociais:</strong>
 
-                <a href="https://www.instagram.com"
+                <a href="https://www.instagram.com/18.negoo/"
                     target="_blank"
                     rel="noopener noreferrer">
                     <i class="fa-brands fa-instagram"></i>
@@ -220,10 +218,7 @@
 
         </footer>
 
-    </div>
-
-    <!-- JAVASCRIPT -->
-    <script src="agendamento.js"></script>
+    
 
 </body>
 </html>

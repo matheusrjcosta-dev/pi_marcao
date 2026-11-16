@@ -1,0 +1,343 @@
+/* ==========================================================================
+   1. RESET E ESTRUTURA BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main"
+        "sidebar footer";
+    min-height: 100vh;
+    background-color: #f4f6fc;
+    color: #333333;
+}
+
+.container-principal {
+    display: contents;
+}
+
+/* ==========================================================================
+   2. BARRA LATERAL (ASIDE)
+   ========================================================================== */
+.barra-lateral {
+    grid-area: sidebar;
+    background-color: #0a178e;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 20px;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.logo,
+.logo-sidebar {
+    display: block;
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.barra-lateral nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.barra-lateral a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.barra-lateral li:first-child a,
+.barra-lateral a:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.barra-lateral li:first-child a::after {
+    content: "›";
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+.barra-lateral .card {
+    margin-top: auto;
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.barra-lateral .card h4 {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+
+.barra-lateral .card p {
+    font-size: 0.78rem;
+    opacity: 0.85;
+    line-height: 1.35;
+}
+
+/* ==========================================================================
+   3. CABEÇALHO
+   ========================================================================== */
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 28px 40px 12px;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #111827;
+    line-height: 1.1;
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: #eef2ff;
+    color: #0d1684;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #dbeafe;
+    transform: translateX(-2px);
+}
+
+/* ==========================================================================
+   4. CONTEÚDO PRINCIPAL E CARD DADOS DO PET
+   ========================================================================== */
+main {
+    grid-area: main;
+    width: 100%;
+    padding: 12px 40px 40px;
+}
+
+main > p {
+    font-size: 15px;
+    color: #0a178e;
+    margin-bottom: 24px;
+}
+
+.dados-prontuario {
+    width: 100%;
+    background-color: #f8fafc;
+    border: 1px solid #d1d5db;
+    border-left: 5px solid #0a178e;
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 28px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 24px;
+}
+
+.dados-prontuario h2 {
+    grid-column: 1 / -1;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0a178e;
+    margin-bottom: 6px;
+}
+
+.dados-prontuario p {
+    font-size: 15px;
+    color: #1f2937;
+}
+
+.perfil-pet {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.pet-foto-prontuario {
+    width: 110px;
+    height: 110px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid #0a178e;
+    background-color: #e5e7eb;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   5. OBSERVAÇÕES E DOCUMENTOS
+   ========================================================================== */
+.observacao {
+    width: 100%;
+}
+
+.observacao h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0a178e;
+    margin-bottom: 16px;
+}
+
+.secao-documentos {
+    margin-top: 12px;
+}
+
+.doc-grupo {
+    margin-bottom: 16px;
+}
+
+.doc-grupo > label:first-child {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0a178e;
+    margin-bottom: 8px;
+}
+
+.upload-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 48px;
+    padding: 0 18px;
+    border: 1px solid #6b7280;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.download-box {
+    text-decoration: none;
+}
+
+.upload-box:hover {
+    border-color: #0d1684;
+    background-color: #f8fafc;
+}
+
+.upload-texto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #1f2937;
+}
+
+.upload-texto i {
+    color: #0a178e;
+    font-size: 16px;
+}
+
+.upload-acao {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #0a178e;
+}
+
+/* ==========================================================================
+   6. RODAPÉ
+   ========================================================================== */
+footer {
+    grid-area: footer;
+    width: 100%;
+    background-color: #0a178e;
+    color: #ffffff;
+    padding: 16px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.9rem;
+}
+
+.redes-sociais {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+footer span {
+    margin-left: auto;
+    font-size: 0.82rem;
+    opacity: 0.85;
+    font-weight: 600;
+}
+
+footer a,
+footer a:visited,
+footer a:active {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s ease;
+}
+
+footer a:hover {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   7. RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        padding: 24px 20px 12px;
+    }
+
+    main {
+        padding: 12px 20px 32px;
+    }
+
+    .dados-prontuario {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        padding: 16px 20px;
+    }
+}
