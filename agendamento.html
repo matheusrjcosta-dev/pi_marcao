@@ -9,6 +9,7 @@
     <title>Agendamento</title>
 
     <link rel="stylesheet" href="agendamento.css">
+    <link rel="stylesheet" href="global.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
@@ -19,21 +20,32 @@
 
     <!-- CABEÇALHO -->
     <header>
+        <button
+            type="button"
+            class="btn-voltar"
+            onclick="window.history.length > 1 ? history.back() : window.location.href='dados-pet.html'"
+            title="Voltar"
+            aria-label="Voltar"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
         <h1>Agendamento</h1>
+        
     </header>
 
     <div class="container-principal">
 
         <!-- MENU LATERAL -->
         <aside class="barra-lateral">
+            <img src="logo.jpg" alt="logo da clínica" class="logo">
 
             <nav>
                 <ul>
-                    <img src="logo.jpg" alt="logo da clínica" class="logo">
-                    <ul style="list-style: none;">
+                    
+                   
                     <li><a href="inicio.html">Início</a></li>
                     <li class="ativo"><a href="agendamento.html">Agendamento</a></li>
-                    <li><a href="dados-pet.html">Meus Pets</a></li>
+                    <li><a href="dados-pet.html">Pets</a></li>
                     <li><a href="prontuario.html">Prontuário</a></li>
                     <li><a href="historico.html">Histórico</a></li>
                     <li><a href="controle-vacina.html">Controle de vacina</a></li>
@@ -114,7 +126,7 @@
                     </label>
 
                     <input
-                        input type="text" id="rga" name="rga" inputmode="numeric" maxlength="9" pattern="[0-9]*"
+                         type="text" id="rga" name="rga" inputmode="numeric" maxlength="9" pattern="[0-9]*"
                                 placeholder="Ex: 123456789" required
                                 oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                 </section>
@@ -217,6 +229,7 @@
             </span>
 
         </footer>
+    </div>
 
     
 

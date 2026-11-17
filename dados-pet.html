@@ -5,30 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meus Pets - Dados do Pet</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="dados-pet.css">
 </head>
 <body>
+
+    <header>
+        <h1>Meus pets</h1>
+
+        <button
+            type="button"
+            class="btn-voltar"
+            onclick="window.history.length > 1 ? history.back() : window.location.href='dados-pet.html'"
+            title="Voltar"
+            aria-label="Voltar"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+    </header>
+
     <div class="container-principal">
 
-        
         <aside class="barra-lateral">
-            <div class="topo-lateral">
-                <div class="logo-container">
-                    <img src="logo.jpg" alt="Logo da clínica" class="logo">
-                </div>
+            <img src="logo.jpg" alt="Logo da clínica" class="logo">
 
-                <nav>
-                    <ul>
-                        <li><a href="inicio.html">Início <span class="seta">&rsaquo;</span></a></li>
-                        <li><a href="agendamento.html">Agendamento</a></li>
-                        <li class="ativo"><a href="dados-pet.html">Pet</a></li>
-                        <li><a href="prontuario.html">Prontuários</a></li>
-                        <li><a href="historico.html">Histórico</a></li>
-                        <li><a href="controle-vacina.html">Controle de vacina</a></li>
-                        <li><a href="cade-meu-pet.html">Cadê meu pet?</a></li>
-                    </ul>
-                </nav>
-            </div>
+            <nav>
+                <ul>
+                    <li><a href="inicio.html">Início</a></li>
+                    <li><a href="agendamento.html">Agendamento</a></li>
+                    <li class="ativo"><a href="dados-pet.html">Pets</a></li>
+                    <li><a href="prontuario.html">Prontuários</a></li>
+                    <li><a href="historico.html">Histórico</a></li>
+                    <li><a href="controle-vacina.html">Controle de vacina</a></li>
+                    <li><a href="cade-meu-pet.html">Cadê meu pet?</a></li>
+                </ul>
+            </nav>
 
             <div class="card">
                 <h4>Central Veterinária</h4>
@@ -38,26 +49,7 @@
         
         <div class="conteudo-direita">
             <main>
-                <div class="cabecalho-voltar">
-                    <button
-                        type="button"
-                        class="btn-voltar"
-                        onclick="window.history.length > 1 ? history.back() : window.location.href='inicio.html'"
-                        title="Voltar"
-                        aria-label="Voltar"
-                    >
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="19" y1="12" x2="5" y2="12"></line>
-                            <polyline points="12 19 5 12 12 5"></polyline>
-                        </svg>
-                    </button>
-
-                </div>
-
-                
-                <header class="topo-main">
-                    <h1>Meus pets</h1>
-
+                <section class="topo-main">
                     <div class="campo-pesquisa">
                         <label for="pesquisar-rga">Pesquisar pet:</label>
                         <input
@@ -73,20 +65,16 @@
                     </div>
 
                     <a href="cadastrar-pet.html" class="btn-cadastrar">+ Cadastrar pet</a>
-                    
-                </header>
-                
+                </section>
 
-                
-                <section class="pet-selecionado">
+                <article class="pet-selecionado">
                     <img src="" alt="Foto do pet Simba" class="pet-foto">
                     <div class="pet-info">
                         <strong>Simba</strong>
                         <span>Gato</span>
                     </div>
-                </section>
+                </article>
 
-                
                 <section class="secao-dados">
                     <h2>Dados do pet</h2>
 
@@ -182,31 +170,27 @@
                         </div>
                     </form>
                 </section>
+
                 <section class="formulario">
-            <form action="processar-cadastro.php" method="POST" enctype="multipart/form-data">
+                    <form action="processar-cadastro.php" method="POST" enctype="multipart/form-data">
+                        <label for="documentos">Carteira de vacinação do animal (PDF, JPG, PNG):</label>
+                        <input type="file" id="documentos" name="documentos[]" accept=".pdf, .jpg, .jpeg, .png" multiple required>
 
-                <label for="documentos">Carteira de vacinação do animal (PDF, JPG, PNG):</label>
-                <input type="file" id="documentos" name="documentos[]" accept=".pdf, .jpg, .jpeg, .png" multiple required>
+                        <label for="pet-foto">Documento (Sinpatinha) (JPG, PNG):</label>
+                        <input type="file" id="pet-foto" name="pet-foto" accept=".jpg, .jpeg, .png" required>
 
-                <label for="pet-foto">Documento (Sinpatinha) (JPG, PNG):</label>
-                <input type="file" id="pet-foto" name="pet-foto" accept=".jpg, .jpeg, .png" required>
-
-                <div class="botoes-form">
-                    <button type="button" class="btn-cancelar" onclick="window.location.href='dados-pet.html'">
-                        Cancelar
-                    </button>
-                    <button type="submit" class="btn-cadastrar">
-                        Cadastrar
-                    </button>
-                </div>
-            </form>
-        </section>
-
-                
-        
+                        <div class="botoes-form">
+                            <button type="button" class="btn-cancelar" onclick="window.location.href='dados-pet.html'">
+                                Cancelar
+                            </button>
+                            <button type="submit" class="btn-cadastrar">
+                                Cadastrar
+                            </button>
+                        </div>
+                    </form>
+                </section>
             </main>
 
-            
             <footer>
                 <div class="redes-sociais">
                     <strong>Redes Sociais:</strong>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadê meu pet? - Rastreamento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="cade-meu-pet.css">
+</head>
+<body>
+
+    <header class="cabecalho-rastreamento">
+        <div class="titulo-grupo">
+            <h1>Rastreamento do Pet</h1>
+            <p>Acompanhe a localização e o status de saúde de seu pet em tempo real</p>
+        </div>
+
+        <div class="acoes-header">
+            <a href="historico.html" class="btn-historico">Histórico</a>
+            <button type="button" id="btn-alertas" class="btn-alertas">Alertas</button>
+        </div>
+    </header>
+
+    <div class="container-principal">
+
+        <aside class="barra-lateral">
+            <img src="logo.jpg" alt="Logo da clínica" class="logo">
+
+            <nav>
+                <ul>
+                    <li><a href="inicio.html">Início</a></li>
+                    <li><a href="agendamento.html">Agendamento</a></li>
+                    <li><a href="dados-pet.html">Pets</a></li>
+                    <li><a href="prontuario.html">Prontuários</a></li>
+                    <li><a href="historico.html">Histórico</a></li>
+                    <li><a href="controle-vacina.html">Controle de vacina</a></li>
+                    <li class="ativo"><a href="cade-meu-pet.html">Cadê meu pet?</a></li>
+                </ul>
+            </nav>
+
+            <div class="card">
+                <h4>Central Veterinária</h4>
+                <p>Vacinação, protocolos e alertas em um só lugar.</p>
+            </div>
+        </aside>
+
+        <main>
+            <section class="mapa-container">
+                
+                <!-- CARD FLUTUANTE COM IDs PARA RECEBER OS DADOS -->
+                <article class="card-pet-flutuante">
+                    <div class="pet-topo">
+                        <img src="" alt="Foto do pet" id="pet-foto" class="pet-avatar">
+                        <div class="pet-dados">
+                            <strong id="pet-nome">--</strong>
+                            <span id="pet-detalhes">--</span>
+                        </div>
+                    </div>
+
+                    <div class="pet-metricas">
+                        <div class="metrica">
+                            <span class="label">Bateria</span>
+                            <strong class="valor-bateria">
+                                <i class="fa-solid fa-battery-three-quarters"></i>
+                                <span id="pet-bateria">--%</span>
+                            </strong>
+                        </div>
+
+                        <div class="metrica">
+                            <span class="label">Distância</span>
+                            <strong id="pet-distancia" class="valor-distancia">-- km</strong>
+                        </div>
+                    </div>
+
+                    <div class="status-conexao">
+                        <span id="status-indicador" class="ponto-verde"></span>
+                        <span id="pet-status">Aguardando sinal...</span>
+                    </div>
+                </article>
+
+                <!-- CONTAINER DO MAPA (ONDE O LEAFLET / GOOGLE MAPS SERÁ RENDERIZADO) -->
+                <div id="mapa" class="area-mapa"></div>
+
+            </section>
+        </main>
+
+        <footer>
+            <div class="redes-sociais">
+                <strong>Redes Sociais:</strong>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+
+            <span>
+                &copy; 2026 Clínica Vida &amp; Saúde Veterinária. Todos os direitos reservados.
+            </span>
+        </footer>
+
+    </div>
+</body>
+</html>
