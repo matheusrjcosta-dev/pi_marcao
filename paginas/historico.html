@@ -73,46 +73,59 @@
                     <!-- Cartão Dados do Pet -->
                     <div class="card-info card-pet">
                         <h2>Dados do pet</h2>
-                        <div class="campos-grid">
-                            <div class="campo-item">
-                                <span class="label">RGA</span>
-                                <div class="valor-pill">12.345.678</div>
-                            </div>
-                            <div class="campo-item">
-                                <span class="label">Nome</span>
-                                <div class="valor-pill">Simba</div>
-                            </div>
-                            <div class="campo-item">
-                                <span class="label">Sexo</span>
-                                <div class="valor-pill">Macho</div>
-                            </div>
-                            <div class="campo-item">
-                                <span class="label">Peso</span>
-                                <div class="valor-pill">15,2 kg</div>
-                            </div>
-                            <div class="campo-item">
-                                <span class="label">Espécie</span>
-                                <div class="valor-pill">Cachorro</div>
-                            </div>
-                            <div class="campo-item">
-                                <span class="label">Data de nascimento/adoção</span>
-                                <div class="valor-pill">12/03/2021</div>
-                            </div>
-                        </div>
-                    </div>
+                        
+                        <section id="secao-historico" class="form-historico">
+                            <form action="historico.php" method="secao-form-ativa">
+                                <div class="campo-grupo">
+                                    <label for="rga">RGA:</label>
+                                    <input type="text" id="rga" name="rga" inputmode="numeric" 
+                                    maxlength="12" pattern="\d{1}\.\d{3}\.\d{3}\-\d{2}" placeholder="Ex: 1.345.789-00" required
+                                    >
+                                </div>
+
+                                <div class="campo-grupo">
+                                    <label for="nome">Nome: </label>
+                                    <input type="text" id="nome" name="nome" placeholder="Ex: Simba" required>
+                                </div>
+
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Sexo:</option>
+                                    <option value="macho">Macho</option>
+                                    <option value="femea">Femea</option>
+                                </select>
+
+                                <div class="campo-grupo">
+                                    <label for="peso">Peso: </label>
+                                    <input type="text" id="peso" name="peso" inputmode="decimal"
+                                    maxlength="4" pattern="[0-9]*([,]+)?" placeholder="ex: 75,5" required
+                                    oninput="this.value = this.value.replace(/[^0-9,]/g, '').replace(/(,.*),/g, '$1')">
+                                </div>
+
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Especie</option>
+                                    <option value="gato">Gato</option>
+                                    <option value="cachorro">Cachorro</option>
+                                </select>
+                            </form>
+                        </section>
 
                     <!-- Cartão Dados do Tutor -->
                     <div class="card-info card-tutor">
                         <h2>Dados do tutor</h2>
-                        <div class="campos-grid tutor-grid">
-                            <div class="campo-item">
-                                <span class="label">Nome</span>
-                                <div class="valor-pill">Luís Ito</div>
-                            </div>
-                            <div class="campo-item">
-                                <span class="label">CPF</span>
-                                <div class="valor-pill">123.456.789-00</div>
-                            </div>
+                        
+                        <div class="card-tutor">
+                            <label for="nome">Nome: </label>
+                            <input type="text" id="nome" name="nome" placeholder="Ex: Luís" required>
+                        </div>
+
+                        <div class="card-tutor">
+                            <label for="cpf">CPF:</label>
+                            <input type="text" id="cpf" name="cpf" inputmode="numeric" 
+                            maxlength="14" pattern="\d{3}\.?\d{3}\.?\d{3}\-?\d{2}" 
+                            placeholder="Ex: 123.456.789-00" required
+                            oninput="this.value = this.value.replace(/\D/g,'')
+                            .replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2')
+                            .replace(/(\d{3})(\d{1,2})$/,'$1-$2')">
                         </div>
                     </div>
                 </section>
