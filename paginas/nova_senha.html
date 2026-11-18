@@ -1,0 +1,106 @@
+<!-- ==============================================================================
+    pagina de login do sistema veterinário
+================================================================================ -->
+
+<!-- define que será html5 -->
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- define o idioma como português do Brasil -->
+
+    <!-- ==============================================================================
+        configurações da página do documento
+        ================================================================================ -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- estabelece o tamanho da viewport(tamanho da tela) -->
+        <meta name="description" content="pagina de nova senha do sistema."> <!-- descreve o conteúdo da página -->
+        <meta name="keywords" content="metategs, SEO, acessibilidade, mecanismos de busca, html"> <!-- garante o contúdo da página -->
+        <meta name="author" content="Luís Ito"> <!-- adiciona o autor da página -->
+        <meta name="language" content="pt-br"> <!-- define o idioma da página -->
+        
+        <title>Nova Senha</title> <!-- titulo do sistema -->
+        <link rel="icon" href="/imagens/icone.png" type="image/x-icon"> <!-- adiciona o ícone do sistema -->
+        <link rel="stylesheet" href="/css/nova_senha.css"> <!-- adiciona o arquivo de estilo CSS -->
+    </head>
+
+    <!-- ==============================================================================
+        Corpo do Documento
+        ================================================================================ -->
+    <body>
+        <div class="container-principal">
+            <!-- Barra Lateral -->
+            <aside class="barra-lateral">
+                <div class="logo">
+                    <img src="/imagens/logo.jpg" alt="Logo do Sistema">
+                </div>
+
+                <!-- Cartão Inferior da Barra Lateral -->
+                <div class="info-lateral">
+                    <h3>Central Veterinária</h3>
+                    <p>Vacinação, protocolos e alertas em um só lugar.</p>
+                </div>
+            </aside>
+
+            <!-- Conteúdo Principal -->
+            <main class="area-redefinicao">
+                <header class="topo-redefinicao">
+                    <a href="/paginas/codigo-de-recuperação.html" class="btn-seta-voltar" aria-label="Voltar">&#8592;</a>
+                    <h1>Redefinição da Senha</h1>
+                </header>
+
+                <form action="/paginas/atualizar_senha.php" method="post" class="form-redefinicao">
+                    <!-- Campo 1: Senha -->
+                    <div class="campo-grupo">
+                        <label for="senha_atual">Senha</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="senha_atual" name="senha_atual" placeholder="Insira sua senha" required>
+                            <button type="button" class="btn-olho" onclick="alternarSenha('senha_atual', this)" aria-label="Mostrar senha">
+                                👁️‍🗨️
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Campo 2: Nova Senha -->
+                    <div class="campo-grupo">
+                        <label for="nova_senha">Nova senha</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="nova_senha" name="nova_senha" placeholder="Insira a nova senha" required>
+                            <button type="button" class="btn-olho" onclick="alternarSenha('nova_senha', this)" aria-label="Mostrar senha">
+                                👁️‍🗨️
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Campo 3: Confirmar Senha -->
+                    <div class="campo-grupo">
+                        <label for="confirmar_senha">Confirmar senha</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirme a nova senha" required>
+                            <button type="button" class="btn-olho" onclick="alternarSenha('confirmar_senha', this)" aria-label="Mostrar senha">
+                                👁️‍🗨️
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Botão Confirmar -->
+                    <div class="area-botao">
+                        <button type="submit" class="btn-confirmar">Confirmar</button>
+                    </div>
+                </form>
+            </main>
+        </div>
+
+        <!-- Script para mostrar/ocultar senha -->
+        <script>
+            function alternarSenha(idCampo, botao) {
+                const input = document.getElementById(idCampo);
+                if (input.type === "password") {
+                    input.type = "text";
+                    botao.style.opacity = "0.5";
+                } else {
+                    input.type = "password";
+                    botao.style.opacity = "1";
+                }
+            }
+        </script>
+    </body>
+</html>

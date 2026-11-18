@@ -1,0 +1,204 @@
+/* ==========================================================================
+   0. RESET E ESTILIZAÇÃO GLOBAL
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ==========================================================================
+   CORPO E ESTRUTURA GERAL DA PÁGINA
+   ========================================================================== */
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO DO CONTEUDO
+   ========================================================================== */
+.container-principal {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* ==========================================================================
+   1. BARRA LATERAL E CARTÃO INFERIOR
+   ========================================================================== */
+.barra-lateral {
+    width: 240px;
+    flex-shrink: 0;
+    background-color: #0a178e;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o cartão para o fundo */
+    align-items: center;
+    padding: 32px 16px 20px 16px;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 130px;
+    height: auto;
+    object-fit: contain;
+}
+
+.info-lateral {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.08); /* Azul translúcido igual ao protótipo */
+    padding: 16px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.info-lateral h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.info-lateral p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #e0e4ff;
+}
+
+/* ==========================================================================
+   2. ÁREA PRINCIPAL E CABEÇALHO
+   ========================================================================== */
+.area-redefinicao {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 60px;
+    background-color: #ffffff;
+}
+
+.topo-redefinicao {
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.btn-seta-voltar {
+    text-decoration: none;
+    color: #030637;
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-left: -60px;
+    transition: transform 0.2s;
+}
+
+.btn-seta-voltar:hover {
+    transform: translateX(-4px);
+}
+
+.topo-redefinicao h1 {
+    color: #2b329b;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   3. FORMULÁRIO E CAMPOS DE SENHA
+   ========================================================================== */
+.form-redefinicao {
+    flex: 1;
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.campo-grupo label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+/* Wrapper para alinhar o ícone do olho dentro/abaixo do campo */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 16px 50px 16px 24px;
+    border: 1px solid #c2b29b; /* Tom suave da borda do protótipo */
+    border-radius: 30px;
+    font-size: 0.95rem;
+    color: #333333;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-wrapper input::placeholder {
+    color: #b5b5b5;
+}
+
+.input-wrapper input:focus {
+    border-color: #0a178e;
+}
+
+/* Botão do Olho (Mostrar/Ocultar Senha) */
+.btn-olho {
+    position: absolute;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   4. BOTÃO CONFIRMAR (CANTO INFERIOR DIREITO)
+   ========================================================================== */
+.area-botao {
+    margin-top: auto; /* Empurra o botão para a parte inferior do formulário */
+    display: flex; /* Mantém o botão na parte inferior do formulário */
+    justify-content: flex-end; /* Alinha o botão à direita */
+    padding-top: 20px; /* Espaçamento superior para separar do conteúdo acima */
+    padding-bottom: 16px; /* Espaçamento inferior para evitar que o botão fique muito próximo da borda */
+}
+
+.btn-confirmar {
+    width: 240px; /* Largura maior para se alinhar com os campos de entrada*/
+    padding: 16px 0; /* Aumenta o padding para melhor toque em dispositivos móveis */
+    border-radius: 35px; /* Borda arredondada para combinar com os campos de entrada */
+    border: none; /* Remove a borda padrão */
+    background-color: #0a178e; /* Cor de fundo azul do protótipo */
+    color: #ffffff; /* Cor do texto branco para contraste */
+    font-size: 1.2rem; /* Aumenta o tamanho da fonte para melhor legibilidade */
+    font-weight: 500; /* Peso da fonte para destaque */
+    cursor: pointer; /* Cursor de ponteiro para indicar interatividade */
+    transition: opacity 0.2s; /* Transição suave para o efeito de hover */
+}
+
+.btn-confirmar:hover {
+    opacity: 0.9; /* Efeito de hover para indicar interatividade */
+}

@@ -1,0 +1,214 @@
+<!-- ==============================================================================
+    pagina de login do sistema veterinário
+================================================================================ -->
+
+<!-- define que será html5 -->
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- define o idioma como português do Brasil -->
+
+    <!-- ==============================================================================
+        configurações da página do documento
+    ================================================================================ -->
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- estabelece o tamanho da viewport(tamanho da tela) -->
+        <meta name="description" content="pagina de historico do pet no sistema."> <!-- descreve o conteúdo da página -->
+        <meta name="keywords" content="metategs, SEO, acessibilidade, mecanismos de busca, html"> <!-- garante o contúdo da página -->
+        <meta name="author" content="Luís Ito"> <!-- adiciona o autor da página -->
+        <meta name="language" content="pt-br"> <!-- define o idioma da página -->
+        
+        <title>Histórico</title> <!-- titulo do sistema -->
+        <link rel="icon" href="/imagens/icone.png" type="image/x-icon"> <!-- adiciona o ícone do sistema -->
+        <link rel="stylesheet" href="/css/historico.css"> <!-- adiciona o arquivo de estilo CSS -->
+    </head>
+
+    <!-- ==============================================================================
+        Corpo do Documento
+    ================================================================================ -->
+
+    <body>
+        <div class="container-principal"> <!-- container principal da página -->
+
+            <!-- ==============================================================================
+                    Barra Lateral com Logo
+            ================================================================================ -->
+            <aside class="barra-lateral">
+                <div class="logo">
+                    <img src="/imagens/logo.jpg" alt="Logo do Sistema">
+                </div>
+
+                <nav class="menu-lateral">
+                    <ul>
+                        <li><a href="/paginas/inicio.html">Início</a></li>
+                        <li><a href="/paginas/agendamento.html">Agendamento</a></li>
+                        <li><a href="/paginas/dados-pet.html">Pet</a></li>
+                        <li><a href="/paginas/prontuario.html">Prontuários</a></li>
+                        <li class="ativo"><a href="/paginas/historico.html">Histórico</a></li>
+                        <li><a href="/paginas/controle-vacina.html">Controle de vacina</a></li>
+                        <li><a href="/paginas/cade-meu-pet.html">Cadê meu pet?</a></li>
+                    </ul>
+                </nav>
+
+                <div class="card">
+                    <h4>Central Veterinária</h4>
+                    <p>Vacinação, protocolos e alertas em um só lugar.</p>
+                </div>
+            </aside>
+
+            <!-- ==============================================================================
+                Cabeçalho da Página
+            ================================================================================ -->
+            <header class="topo-pagina">
+                <a href="dashboard.html" class="btn-voltar" aria-label="Voltar">&#8592;</a>
+                <h1>Histórico de consultas</h1>
+            </header>
+
+            <!-- ==============================================================================
+                    Conteúdo Principal
+            ================================================================================ -->
+            <main>
+                <!-- Linha Superior: Dados do Pet e Dados do Tutor -->
+                <section class="linha-dados">
+                    <!-- Cartão Dados do Pet -->
+                    <div class="card-info card-pet">
+                        <h2>Dados do pet</h2>
+                        <div class="campos-grid">
+                            <div class="campo-item">
+                                <span class="label">RGA</span>
+                                <div class="valor-pill">12.345.678</div>
+                            </div>
+                            <div class="campo-item">
+                                <span class="label">Nome</span>
+                                <div class="valor-pill">Simba</div>
+                            </div>
+                            <div class="campo-item">
+                                <span class="label">Sexo</span>
+                                <div class="valor-pill">Macho</div>
+                            </div>
+                            <div class="campo-item">
+                                <span class="label">Peso</span>
+                                <div class="valor-pill">15,2 kg</div>
+                            </div>
+                            <div class="campo-item">
+                                <span class="label">Espécie</span>
+                                <div class="valor-pill">Cachorro</div>
+                            </div>
+                            <div class="campo-item">
+                                <span class="label">Data de nascimento/adoção</span>
+                                <div class="valor-pill">12/03/2021</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cartão Dados do Tutor -->
+                    <div class="card-info card-tutor">
+                        <h2>Dados do tutor</h2>
+                        <div class="campos-grid tutor-grid">
+                            <div class="campo-item">
+                                <span class="label">Nome</span>
+                                <div class="valor-pill">Luís Ito</div>
+                            </div>
+                            <div class="campo-item">
+                                <span class="label">CPF</span>
+                                <div class="valor-pill">123.456.789-00</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Secção: Consultas Realizadas -->
+                <section class="card-secao">
+                    <div class="cabecalho-secao">
+                        <h2>Consultas realizadas</h2>
+                        <span class="badge-contador">3 registros</span>
+                    </div>
+
+                    <div class="grid-consultas">
+                        <!-- Consulta 1 -->
+                        <article class="card-consulta">
+                            <div class="consulta-topo">
+                                <span class="data">12/03/2024</span>
+                                <span class="status-badge">Realizada</span>
+                            </div>
+                            <h3>Consulta clínica / Vacinação</h3>
+                            <p class="duracao">Duração: 30 minutos</p>
+                            <p class="observacao">Observação: Sem reações adversas observadas. Próxima dose agendada para 12/06/2024.</p>
+                        </article>
+
+                        <!-- Consulta 2 -->
+                        <article class="card-consulta">
+                            <div class="consulta-topo">
+                                <span class="data">12/06/2024</span>
+                                <span class="status-badge">Realizada</span>
+                            </div>
+                            <h3>Check-up e exames</h3>
+                            <p class="duracao">Duração: 45 minutos</p>
+                            <p class="observacao">Observação: Hemograma e bioquímica dentro dos parâmetros normais. Acompanhamento sem alterações.</p>
+                        </article>
+
+                        <!-- Consulta 3 -->
+                        <article class="card-consulta">
+                            <div class="consulta-topo">
+                                <span class="data">12/09/2024</span>
+                                <span class="status-badge">Realizada</span>
+                            </div>
+                            <h3>Retorno pós-vacinação</h3>
+                            <p class="duracao">Duração: 20 minutos</p>
+                            <p class="observacao">Observação: Resposta imunológica adequada. Próximo acompanhamento agendado para 12/12/2024.</p>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Secção: Documentos Anexados -->
+                <section class="card-secao">
+                    <div class="cabecalho-secao">
+                        <h2>Documentos anexados</h2>
+                    </div>
+
+                    <div class="grid-documentos">
+                        <div class="item-documento">
+                            <div class="doc-info">
+                                <span class="icone-clip">&#128206;</span>
+                                <span>Carteira de vacinação do animal (PDF)</span>
+                            </div>
+                            <a href="#" class="link-visualizar">Visualizar</a>
+                        </div>
+
+                        <div class="item-documento">
+                            <div class="doc-info">
+                                <span class="icone-clip">&#128206;</span>
+                                <span>Documento (Sinpatinha) (JPG)</span>
+                            </div>
+                            <a href="#" class="link-visualizar">Visualizar</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- ==============================================================================
+                    Rodapé
+            ================================================================================ -->
+            <footer>
+                <div class="redes-sociais">
+                    <strong>Redes Sociais:</strong>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i>
+                        Instagram
+                    </a>
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
+                        WhatsApp
+                    </a>
+                    <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
+                        <i class="fa-brands fa-linkedin" style="font-size: 20px;"></i>
+                        LinkedIn
+                    </a>
+                </div>
+                <section class="final"></section>
+                <span>&copy; 2026 Clínica Vida & Saúde Veterinária. Todos os direitos reservados.</span>
+            </footer>
+        </div>
+    </body>
+</html>
+        

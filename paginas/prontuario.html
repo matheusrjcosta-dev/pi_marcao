@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="prontuario.css">
+    <title>Prontuário</title>
+</head>
+<body>
+    <header>
+        <button
+            type="button"
+            class="btn-voltar"
+            onclick="window.history.length > 1 ? history.back() : window.location.href='dados-pet.html'"
+            title="Voltar"
+            aria-label="Voltar"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <h1>Prontuário</h1>
+    </header>
+     <div class="container-principal">
+
+        
+        <aside class="barra-lateral">
+            <div class="topo-lateral">
+                <div class="logo-container">
+                    <img src="logo.jpg" alt="Logo da clínica" class="logo">
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="inicio.html">Início <span class="seta">&rsaquo;</span></a></li>
+                        <li><a href="agendamento.html">Agendamento</a></li>
+                        <li class="ativo"><a href="dados-pet.html">Pet</a></li>
+                        <li><a href="prontuario.html">Prontuários</a></li>
+                        <li><a href="historico.html">Histórico</a></li>
+                        <li><a href="controle-vacina.html">Controle de vacina</a></li>
+                        <li><a href="cade-meu-pet.html">Cadê meu pet?</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="card">
+                <h4>Central Veterinária</h4>
+                <p>Vacinação, protocolos e alertas em um só lugar.</p>
+            </div>
+        </aside>
+
+    <main>
+        <p>Informações do prontuário veterinário.</p>
+        <section class="dados-prontuario">
+        <h2>Dados do Pet</h2>
+
+            <div class="perfil-pet">
+                <img src="img/beto.jpg" alt="Foto do pet Beto" class="pet-foto-prontuario">
+
+                <div class="dados-pet-info">
+                    <p><strong>Nome:</strong> Beto</p>
+                    <p><strong>Espécie:</strong> Cachorro</p>
+                    <p><strong>Raça:</strong> Labrador</p>
+                    <p><strong>Idade:</strong> 3 anos</p>
+                </div>
+            </div>
+        </section>
+        <section class="observacao">
+            <h2>Observações</h2>
+            <section class="secao-documentos">
+
+            <div class="doc-grupo">
+                <label>Relatório de Atendimento (PDF)</label>
+                
+                <a href="arquivos/relatorio-pet.pdf" download="Relatorio_Atendimento.pdf" class="upload-box download-box">
+                    <span class="upload-texto">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        relatorio-atendimento.pdf
+                    </span>
+                    <span class="upload-acao">
+                        <i class="fa-solid fa-download"></i> Baixar PDF
+                    </span>
+                </a>
+            </div>
+        </section>
+
+            
+        </section>
+    </main>
+    <footer>
+        <div class="redes-sociais">
+            <strong>Redes Sociais:</strong>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+            </a>
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
+                WhatsApp
+            </a>
+    <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
+    <i class="fa-brands fa-linkedin" style="font-size: 20px;"></i>
+    LinkedIn
+  </a>
+   <section class="final"></section>
+        <span>&copy; 2026 Clínica Vida & Saúde Veterinária. Todos os direitos reservados.</span>
+    </footer>
+
+</body>
+</html>

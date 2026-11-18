@@ -1,14 +1,22 @@
+<!-- ==============================================================================
+    pagina de login do sistema veterinário
+================================================================================ -->
+<!DOCTYPE html> <!-- define o tipo de documento como HTML5 -->
+<html lang="pt-br"> <!-- define o idioma como português do Brasil -->
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<!-- ==============================================================================
+    configurações da página do documento
+    ================================================================================ -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> <!-- define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- estabelece o tamanho da viewport(tamanho da tela) -->
+    <meta name="description" content="pagina de agendamento do sistema."> <!-- descreve o conteúdo da página -->
+    <meta name="keywords" content="metategs, SEO, acessibilidade, mecanismos de busca, html"> <!-- garante o contúdo da página -->
+    <meta name="author" content="Matheus-Rodrigues"> <!-- adiciona o autor da página -->
+    <meta name="language" content="pt-br"> <!-- define o idioma da página -->
 
-    <title>Agendamento</title>
-
-    <link rel="stylesheet" href="/css/agendamento.css">
+    <title>Agendamento</title><!-- define o título da página -->
+    <link rel="stylesheet" href="/css/agendamento.css"> <!-- link para o arquivo CSS -->
     <link rel="icon" href="/imagens/icone.png" type="image/x-icon"> <!-- adiciona o ícone do sistema -->
 
     <!-- Font Awesome -->
@@ -16,6 +24,9 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
+<!-- ==============================================================================
+    Corpo do Documento
+================================================================================ -->
 <body>
 
     <!-- CABEÇALHO -->
@@ -25,14 +36,18 @@
 
     <div class="container-principal">
 
-        <!-- MENU LATERAL -->
+        <!-- ==============================================================================
+            Barra Lateral com Logo
+        ================================================================================ -->
         <aside class="barra-lateral">
 
             <nav>
                 <ul>
                     <img src="/imagens/logo.jpg" alt="logo da clínica" class="logo">
+                    <ul style="list-style: none;">
                     <li><a href="/paginas/inicio.html">Início</a></li>
-                    <li><a href="/paginas/agendamento.html">Agendamento</a></li>
+                    <li class="ativo"><a href="/paginas/agendamento.html">Agendamento</a></li>
+                    <li><a href="/paginas/dados-pet.html">Meus Pets</a></li>
                     <li><a href="/paginas/prontuario.html">Prontuário</a></li>
                     <li><a href="/paginas/historico.html">Histórico</a></li>
                     <li><a href="/paginas/controle-vacina.html">Controle de vacina</a></li>
@@ -68,35 +83,35 @@
 
                     <h5>Tipo de Consulta:</h5>
 
-                    <input type="radio" id="rotina"
+                    <input type="radio" id="rotina" required
                         name="consulta" value="Rotina" required>
                     <label for="rotina">
                         <i class="fa-solid fa-stethoscope"></i>
                         Rotina
                     </label>
 
-                    <input type="radio" id="emergencia"
+                    <input type="radio" id="emergencia" required
                         name="consulta" value="Emergência">
                     <label for="emergencia">
                         <i class="fa-solid fa-truck-medical"></i>
                         Emergência
                     </label>
 
-                    <input type="radio" id="preventiva"
+                    <input type="radio" id="preventiva" required
                         name="consulta" value="Preventiva">
                     <label for="preventiva">
                         <i class="fa-solid fa-shield-heart"></i>
                         Preventiva
                     </label>
 
-                    <input type="radio" id="especializada"
+                    <input type="radio" id="especializada" required
                         name="consulta" value="Especializada">
                     <label for="especializada">
                         <i class="fa-solid fa-user-doctor"></i>
                         Especializada
                     </label>
 
-                    <input type="radio" id="comportamental"
+                    <input type="radio" id="comportamental" required
                         name="consulta" value="Comportamental">
                     <label for="comportamental">
                         <i class="fa-solid fa-brain"></i>
@@ -113,17 +128,13 @@
                     </label>
 
                     <input
-                        type="number"
-                        id="rga"
-                        name="rga"
-                        placeholder="Digite o RGA sem pontos ou traços"
-                        maxlength="10"
-                        required
-                        title="Digite o RGA no formato 00000000">
+                        input type="text" id="rga" name="rga" inputmode="numeric" maxlength="9" pattern="[0-9]*"
+                                placeholder="Ex: 123456789" required
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                 </section>
 
                 <!-- DATA E HORÁRIO -->
-                <section class="data-hora">
+                <section class="data-hora">     
 
                     <div class="campo">
 
@@ -189,7 +200,7 @@
 
                 <strong>Redes Sociais:</strong>
 
-                <a href="https://www.instagram.com"
+                <a href="https://www.instagram.com/18.negoo/"
                     target="_blank"
                     rel="noopener noreferrer">
                     <i class="fa-brands fa-instagram"></i>
@@ -221,10 +232,7 @@
 
         </footer>
 
-    </div>
-
-    <!-- JAVASCRIPT -->
-    <script src="agendamento.js"></script>
+    
 
 </body>
 </html>

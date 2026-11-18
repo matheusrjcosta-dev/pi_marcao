@@ -1,31 +1,52 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!-- ==============================================================================
+    pagina de login do sistema veterinário
+================================================================================ -->
+<!DOCTYPE html> <!-- define o tipo de documento como HTML5 -->
+<html lang="pt-br"> <!-- define o idioma como português do Brasil -->
+
+<!-- ==============================================================================
+       configurações da página do documento
+    ================================================================================ -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="/css/inicio.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- estabelece o tamanho da viewport(tamanho da tela) -->
+    <meta name="description" content="pagina de inicio do sistema."> <!-- descreve o conteúdo da página -->
+    <meta name="keywords" content="metategs, SEO, acessibilidade, mecanismos de busca, html"> <!-- garante o contúdo da página -->
+    <meta name="author" content="Matheus-Rodrigues"> <!-- adiciona o autor da página -->
+    <meta name="language" content="pt-br"> <!-- define o idioma da página -->
+
+    <title>Inicio</title> <!-- define o título da página -->
+    <link rel="stylesheet" href="/css/inicio.css"> <!-- link para o arquivo CSS -->
     <link rel="icon" href="/imagens/icone.png" type="image/x-icon"> <!-- adiciona o ícone do sistema -->
-   
 </head>
+
+<!-- ==============================================================================
+    Corpo do Documento
+================================================================================ -->
 <body>
     <header >
         <h1>Clínica Vida & Saúde Veterinária</h1>
-        <a href="/paginas/login.html" class="usuario" aria-label="Área do Usuário">&#128100;</a>
+        <!-- botão para alternar para a página de login -->
+         <a href="/paginas/login.html" class="usuario" aria-label="Área do Usuário">&#128100;</a>
     </header>
     <div class="container-principal">
+
+    <!-- ==============================================================================
+        Barra Lateral com Logo
+    ================================================================================ -->
     <aside class="barra-lateral">
         <nav>
-            <ul>
-                <img src="/imagens/logo.jpg" alt="logo da clínica" class="logo">
-                <li><a href="/paginas/inicio.html">Inicio</a></li>
-                <li><a href="/paginas/agendamento.html">Agendamento</a></li>
-                <li><a href="/paginas/prontuario.html">Prontuátio</a></li>
-                <li><a href="/paginas/historico.html">Histórico</a></li>
-                <li><a href="/paginas/controle-vacina.html">Controle de vacina</a></li>
-                <li><a href="/paginas/cade-meu-pet.html">Cadê meu pet?</a></li>
+            <img src="/imagens/logo.jpg" alt="logo da clínica" class="logo">
+            <ul style="list-style: none;">
+                    <li class="ativo"><a href="/paginas/inicio.html">Início</a></li>
+                    <li><a href="/paginas/agendamento.html">Agendamento</a></li>
+                    <li><a href="/paginas/dados-pet.html">Meus Pets</a></li>
+                    <li><a href="/paginas/prontuario.html">Prontuário</a></li>
+                    <li><a href="/paginas/historico.html">Histórico</a></li>
+                    <li><a href="/paginas/controle-vacina.html">Controle de vacina</a></li>
+                    <li><a href="/paginas/cade-meu-pet.html">Cadê meu pet?</a></li>
             </ul>
-            </nav>
+        </nav>
             <div class="card">
                 <h4>Central Veterinária</h4>
                 <p>Vacinação, protocolos e alertas em um só lugar.</p>

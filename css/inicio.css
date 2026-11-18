@@ -67,56 +67,58 @@ body {
     gap: 4px;
 }
 
-.barra-lateral a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 14px;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: background-color 0.2s;
+.barra-lateral a { /* links da barra lateral */
+    display: flex; /* exibe os links como flexbox */
+    align-items: center; /* alinha os itens verticalmente ao centro */
+    justify-content: space-between; /* distribui o espaço entre os itens */
+    padding: 10px 14px; /* adiciona espaçamento interno aos links */
+    color: #ffffff; /* define a cor do texto dos links */
+    text-decoration: none; /* remove o sublinhado dos links */
+    font-size: 0.9rem; /* define o tamanho da fonte dos links */
+    font-weight: 600; /* define a espessura da fonte dos links */
+    border-radius: 8px; /* adiciona bordas arredondadas aos links */
+    transition: background-color 0.2s; /* adiciona uma transição suave para a mudança de cor de fundo */
 }
 
-.barra-lateral li:first-child a,
-.barra-lateral a:hover {
-    background-color: rgba(255, 255, 255, 0.18);
+.barra-lateral li:first-child a, /* destaca o primeiro item da barra lateral */
+.barra-lateral a:hover { /* destaca o item da barra lateral ao passar o mouse sobre ele */
+    background-color: rgba(255, 255, 255, 0.18); /* altera a cor de fundo do link ao passar o mouse sobre ele */
 }
 
-.barra-lateral li:first-child a::after {
-    content: "›";
-    font-size: 1.1rem;
-    opacity: 0.7;
+.barra-lateral li:first-child a::after { /* adiciona um ícone de seta ao lado do primeiro item da barra lateral */
+    content: "›"; /* define o conteúdo do pseudo-elemento como uma seta */
+    font-size: 1.1rem; /* define o tamanho da fonte do pseudo-elemento */
+    opacity: 0.7; /* define a opacidade do pseudo-elemento */
 }
 
-.barra-lateral .card {
-    margin-top: auto;
-    background-color: rgba(255, 255, 255, 0.12);
-    padding: 16px;
-    border-radius: 10px;
+.barra-lateral .card { /* define o estilo dos cards da barra lateral */
+    margin-top: auto; /* empurra os cards para o final da barra lateral */
+    background-color: rgba(255, 255, 255, 0.12); /* define a cor de fundo dos cards da barra lateral */
+    padding: 16px; /* adiciona espaçamento interno aos cards da barra lateral */
+    border-radius: 10px; /* adiciona bordas arredondadas aos cards da barra lateral */
 }
 
-.barra-lateral .card h4 {
-    font-size: 0.9rem;
-    margin-bottom: 6px;
-    color: #ffffff;
+.barra-lateral .card h4 { /* define o estilo do título dos cards da barra lateral */
+    font-size: 0.9rem; /* define o tamanho da fonte do título dos cards da barra lateral */
+    margin-bottom: 6px; /* adiciona espaçamento abaixo do título dos cards da barra lateral */
+    color: #ffffff; /* define a cor do título dos cards da barra lateral */
 }
 
-.barra-lateral .card p {
-    font-size: 0.78rem;
-    opacity: 0.85;
-    line-height: 1.35;
+.barra-lateral .card p { /* define o estilo do parágrafo dos cards da barra lateral */
+    font-size: 0.78rem; /* define o tamanho da fonte do parágrafo dos cards da barra lateral */
+    opacity: 0.85; /* define a opacidade do parágrafo dos cards da barra lateral */
+    line-height: 1.35; /* define a altura da linha do parágrafo dos cards da barra lateral */
 }
 
 /* ==========================================================================
    3. CABEÇALHO (HEADER)
    ========================================================================== */
 .usuario {
-    content: "👤";
-        font-size: 1.8rem;
-    cursor: pointer;
+    content: "👤"; /* cria o icone de usuário */
+    font-size: 1.8rem; /* define o tamanho do ícone de usuário */
+    cursor: pointer; /* adiciona um cursor de ponteiro ao passar o mouse sobre o ícone */
+    text-decoration: none; /* remove o sublinhado do link */
+    transition: background-color 0.2s; /* adiciona uma transição suave para a mudança de cor de fundo */
 }
 
 header {
@@ -165,7 +167,13 @@ main {
     max-width: 520px;
     line-height: 1.4;
 }
-
+img.animal {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    margin-top: 16px;
+}   
 /* 4 Cards de Serviços (Linha do meio) */
 .consultas, .exames, .Vacinacao, .cirurgias {
     grid-column: span 1;

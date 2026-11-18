@@ -187,6 +187,8 @@ button[type="submit"], .btn-primary, .btn-enviar {
     width: 220px;
     padding: 14px 0;
     border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
     border: none;
     background-color: #0a178e;
     color: #ffffff;
@@ -196,6 +198,10 @@ button[type="submit"], .btn-primary, .btn-enviar {
     margin-top: auto;
     align-self: flex-end;
     transition: opacity 0.2s;
+}
+
+button[type="submit"]:hover, .btn-primary:hover, .btn-enviar:hover {
+    opacity: 0.9;
 }
 
 /* botão ao passar o mouse */

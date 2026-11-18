@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Pets - Dados do Pet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/dados-pet.css">
+</head>
+<body>
+    <div class="container-principal">
+
+        
+        <aside class="barra-lateral">
+            <div class="topo-lateral">
+                <div class="logo-container">
+                    <img src="/imagens/logo.jpg" alt="Logo da clínica" class="logo">
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="/paginas/inicio.html">Início <span class="seta">&rsaquo;</span></a></li>
+                        <li><a href="/paginas/agendamento.html">Agendamento</a></li>
+                        <li class="ativo"><a href="/paginas/dados-pet.html">Pet</a></li>
+                        <li><a href="/paginas/prontuario.html">Prontuários</a></li>
+                        <li><a href="/paginas/historico.html">Histórico</a></li>
+                        <li><a href="/paginas/controle-vacina.html">Controle de vacina</a></li>
+                        <li><a href="/paginas/cade-meu-pet.html">Cadê meu pet?</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="card">
+                <h4>Central Veterinária</h4>
+                <p>Vacinação, protocolos e alertas em um só lugar.</p>
+            </div>
+        </aside>
+        
+        <div class="conteudo-direita">
+            <main>
+                <div class="cabecalho-voltar">
+                    <button
+                        type="button"
+                        class="btn-voltar"
+                        onclick="window.history.length > 1 ? history.back() : window.location.href='inicio.html'"
+                        title="Voltar"
+                        aria-label="Voltar"
+                    >
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                    </button>
+
+                </div>
+
+                
+                <header class="topo-main">
+                    <h1>Meus pets</h1>
+
+                    <div class="campo-pesquisa">
+                        <label for="pesquisar-rga">Pesquisar pet:</label>
+                        <input
+                            type="text"
+                            id="pesquisar-rga"
+                            name="pesquisar-rga"
+                            inputmode="numeric"
+                            maxlength="9"
+                            pattern="[0-9]*"
+                            placeholder="Digite o rga:"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                        >
+                    </div>
+
+                    <a href="cadastrar-pet.html" class="btn-cadastrar">+ Cadastrar pet</a>
+                    
+                </header>
+                
+
+                
+                <section class="pet-selecionado">
+                    <img src="" alt="Foto do pet Simba" class="pet-foto">
+                    <div class="pet-info">
+                        <strong>Simba</strong>
+                        <span>Gato</span>
+                    </div>
+                </section>
+
+                
+                <section class="secao-dados">
+                    <h2>Dados do pet</h2>
+
+                    <form action="pets" class="form-grid">
+                        <div class="campo-grupo">
+                            <label for="rga">RGA:</label>
+                            <input
+                                type="text"
+                                id="rga"
+                                name="rga"
+                                inputmode="numeric"
+                                maxlength="9"
+                                pattern="[0-9]*"
+                                placeholder="Exemplo: 12.345.678"
+                                readonly
+                            >
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="nome-pet">Nome:</label>
+                            <input
+                                type="text"
+                                id="nome-pet"
+                                name="nome-pet"
+                                placeholder="Exemplo: Simba"
+                                maxlength="50"
+                                readonly
+                            >
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="microchip">Microchip:</label>
+                            <input
+                                type="text"
+                                id="microchip"
+                                name="microchip"
+                                inputmode="numeric"
+                                maxlength="15"
+                                placeholder="Exemplo: 977.200000000000"
+                                readonly
+                            >
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="especie">Espécie:</label>
+                            <select id="especie" name="especie" disabled>
+                                <option value="gato" selected>Exemplo: Gato</option>
+                                <option value="cachorro">Cachorro</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="cor">Cor:</label>
+                            <input
+                                type="text"
+                                id="cor"
+                                name="cor"
+                                placeholder="Exemplo: marrom"
+                                readonly
+                            >
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="sexo">Sexo:</label>
+                            <select id="sexo" name="sexo" disabled>
+                                <option value="macho" selected>Exemplo: macho</option>
+                                <option value="femea">Fêmea</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="data_nasc">Data de nascimento/adoção:</label>
+                            <input
+                                type="text"
+                                id="data_nasc"
+                                name="data_nasc"
+                                placeholder="Exemplo: 12/05/2023"
+                                onfocus="(this.type='date')"
+                                readonly
+                            >
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label for="peso">Peso:</label>
+                            <input
+                                type="text"
+                                id="peso"
+                                name="peso"
+                                placeholder="Exemplo: 15 Kg"
+                                readonly
+                            >
+                        </div>
+                    </form>
+                </section>
+                <section class="formulario">
+            <form action="processar-cadastro.php" method="POST" enctype="multipart/form-data">
+
+                <label for="documentos">Carteira de vacinação do animal (PDF, JPG, PNG):</label>
+                <input type="file" id="documentos" name="documentos[]" accept=".pdf, .jpg, .jpeg, .png" multiple required>
+
+                <label for="pet-foto">Documento (Sinpatinha) (JPG, PNG):</label>
+                <input type="file" id="pet-foto" name="pet-foto" accept=".jpg, .jpeg, .png" required>
+
+                <div class="botoes-form">
+                    <button type="button" class="btn-cancelar" onclick="window.location.href='dados-pet.html'">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-cadastrar">
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+        </section>
+
+                
+        
+            </main>
+
+            
+            <footer>
+                <div class="redes-sociais">
+                    <strong>Redes Sociais:</strong>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
+                        <i class="fa-brands fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+
+                <span>
+                    &copy; 2026 Clínica Vida &amp; Saúde Veterinária. Todos os direitos reservados.
+                </span>
+            </footer>
+        </div>
+
+    </div>
+</body>
+</html>

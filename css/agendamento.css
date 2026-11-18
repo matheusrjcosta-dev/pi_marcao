@@ -79,17 +79,16 @@ body {
     transition: background-color 0.2s;
 }
 
-.barra-lateral li:nth-child(2) a,
+.barra-lateral li.ativo a,
 .barra-lateral a:hover {
     background-color: rgba(255, 255, 255, 0.18);
 }
 
-.barra-lateral li:nth-child(2) a::after {
+.barra-lateral li.ativo a::after {
     content: "›";
     font-size: 1.1rem;
     opacity: 0.7;
 }
-
 .barra-lateral .card {
     margin-top: auto;
     background-color: rgba(255, 255, 255, 0.12);
@@ -201,7 +200,7 @@ label, .formulario h5 {
 .formulario input[type="radio"]:checked + label i { color: #ffffff; }
 
 /* --- INPUTS DE TEXTO, DATA, HORA E TEXTAREA --- */
-input[type="number"], input[type="date"], input[type="time"], textarea {
+input[type="text"], input[type="date"], input[type="time"], textarea {
     width: 100%;
     max-width: 400px;
     padding: 12px 16px;
