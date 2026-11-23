@@ -1,38 +1,19 @@
-<!-- ==============================================================================
-    pagina de login do sistema veterinário
-================================================================================ -->
-
-<!-- define que será html5 -->
 <!DOCTYPE html>
-<html lang="pt-br"> <!-- define o idioma como português do Brasil -->
-
-    <!-- ==============================================================================
-        configurações da página do documento
-    ================================================================================ -->
-
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- estabelece o tamanho da viewport(tamanho da tela) -->
-        <meta name="description" content="pagina de historico do pet no sistema."> <!-- descreve o conteúdo da página -->
-        <meta name="keywords" content="metategs, SEO, acessibilidade, mecanismos de busca, html"> <!-- garante o contúdo da página -->
-        <meta name="author" content="Luís Ito"> <!-- adiciona o autor da página -->
-        <meta name="language" content="pt-br"> <!-- define o idioma da página -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Página de histórico do pet no sistema.">
+        <meta name="author" content="Luís Ito">
         
-        <title>Histórico</title> <!-- titulo do sistema -->
-        <link rel="icon" href="/imagens/icone.png" type="image/x-icon"> <!-- adiciona o ícone do sistema -->
-        <link rel="stylesheet" href="/css/historico.css"> <!-- adiciona o arquivo de estilo CSS -->
+        <title>Histórico - Central Veterinária</title>
+        <link rel="icon" href="/imagens/icone.png" type="image/x-icon">
+        <link rel="stylesheet" href="/css/historico.css">
     </head>
 
-    <!-- ==============================================================================
-        Corpo do Documento
-    ================================================================================ -->
-
     <body>
-        <div class="container-principal"> <!-- container principal da página -->
-
-            <!-- ==============================================================================
-                    Barra Lateral com Logo
-            ================================================================================ -->
+        <div class="container-principal">
+            <!-- Barra Lateral com Logo -->
             <aside class="barra-lateral">
                 <div class="logo">
                     <img src="/imagens/logo.jpg" alt="Logo do Sistema">
@@ -56,17 +37,13 @@
                 </div>
             </aside>
 
-            <!-- ==============================================================================
-                Cabeçalho da Página
-            ================================================================================ -->
+            <!-- Cabeçalho da Página -->
             <header class="topo-pagina">
                 <a href="dashboard.html" class="btn-voltar" aria-label="Voltar">&#8592;</a>
                 <h1>Histórico de consultas</h1>
             </header>
 
-            <!-- ==============================================================================
-                    Conteúdo Principal
-            ================================================================================ -->
+            <!-- Conteúdo Principal -->
             <main>
                 <!-- Linha Superior: Dados do Pet e Dados do Tutor -->
                 <section class="linha-dados">
@@ -74,58 +51,63 @@
                     <div class="card-info card-pet">
                         <h2>Dados do pet</h2>
                         
-                        <section id="secao-historico" class="form-historico">
-                            <form action="historico.php" method="secao-form-ativa">
-                                <div class="campo-grupo">
-                                    <label for="rga">RGA:</label>
-                                    <input type="text" id="rga" name="rga" inputmode="numeric" 
-                                    maxlength="12" pattern="\d{1}\.\d{3}\.\d{3}\-\d{2}" placeholder="Ex: 1.345.789-00" required
-                                    >
-                                </div>
+                        <form action="historico.php" method="post" class="campos-grid">
+                            <div class="campo-grupo">
+                                <label for="rga">RGA</label>
+                                <input type="text" id="rga" name="rga" inputmode="numeric" 
+                                maxlength="12" pattern="\d{1}\.\d{3}\.\d{3}\-\d{2}" placeholder="Ex: 1.345.789-00" required>
+                            </div>
 
-                                <div class="campo-grupo">
-                                    <label for="nome">Nome: </label>
-                                    <input type="text" id="nome" name="nome" placeholder="Ex: Simba" required>
-                                </div>
+                            <div class="campo-grupo">
+                                <label for="nome_pet">Nome</label>
+                                <input type="text" id="nome_pet" name="nome_pet" placeholder="Ex: Simba" required>
+                            </div>
 
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Sexo:</option>
+                            <div class="campo-grupo">
+                                <label for="sexo_pet">Sexo</label>
+                                <select id="sexo_pet" name="sexo_pet" class="form-select">
+                                    <option value="" disabled selected>Selecione</option>
                                     <option value="macho">Macho</option>
-                                    <option value="femea">Femea</option>
+                                    <option value="femea">Fêmea</option>
                                 </select>
+                            </div>
 
-                                <div class="campo-grupo">
-                                    <label for="peso">Peso: </label>
-                                    <input type="text" id="peso" name="peso" inputmode="decimal"
-                                    maxlength="4" pattern="[0-9]*([,]+)?" placeholder="ex: 75,5" required
-                                    oninput="this.value = this.value.replace(/[^0-9,]/g, '').replace(/(,.*),/g, '$1')">
-                                </div>
+                            <div class="campo-grupo">
+                                <label for="peso">Peso (kg)</label>
+                                <input type="text" id="peso" name="peso" inputmode="decimal"
+                                maxlength="5" pattern="[0-9]+(,[0-9]+)?" placeholder="Ex: 15,2" required
+                                oninput="this.value = this.value.replace(/[^0-9,]/g, '').replace(/(,.*),/g, '$1')">
+                            </div>
 
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Especie</option>
+                            <div class="campo-grupo">
+                                <label for="especie_pet">Espécie</label>
+                                <select id="especie_pet" name="especie_pet" class="form-select">
+                                    <option value="" disabled selected>Selecione</option>
                                     <option value="gato">Gato</option>
                                     <option value="cachorro">Cachorro</option>
                                 </select>
-                            </form>
-                        </section>
+                            </div>
+                        </form>
+                    </div> <!-- Fechamento correto do card-pet -->
 
                     <!-- Cartão Dados do Tutor -->
                     <div class="card-info card-tutor">
                         <h2>Dados do tutor</h2>
-                        
-                        <div class="card-tutor">
-                            <label for="nome">Nome: </label>
-                            <input type="text" id="nome" name="nome" placeholder="Ex: Luís" required>
-                        </div>
+                        <div class="campos-grid tutor-grid">
+                            <div class="campo-grupo">
+                                <label for="nome_tutor">Nome</label>
+                                <input type="text" id="nome_tutor" name="nome_tutor" placeholder="Ex: Luís Ito" required>
+                            </div>
 
-                        <div class="card-tutor">
-                            <label for="cpf">CPF:</label>
-                            <input type="text" id="cpf" name="cpf" inputmode="numeric" 
-                            maxlength="14" pattern="\d{3}\.?\d{3}\.?\d{3}\-?\d{2}" 
-                            placeholder="Ex: 123.456.789-00" required
-                            oninput="this.value = this.value.replace(/\D/g,'')
-                            .replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2')
-                            .replace(/(\d{3})(\d{1,2})$/,'$1-$2')">
+                            <div class="campo-grupo">
+                                <label for="cpf">CPF</label>
+                                <input type="text" id="cpf" name="cpf" inputmode="numeric" 
+                                maxlength="14" pattern="\d{3}\.?\d{3}\.?\d{3}\-?\d{2}" 
+                                placeholder="Ex: 123.456.789-00" required
+                                oninput="this.value = this.value.replace(/\D/g,'')
+                                .replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2')
+                                .replace(/(\d{3})(\d{1,2})$/,'$1-$2')">
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -138,7 +120,6 @@
                     </div>
 
                     <div class="grid-consultas">
-                        <!-- Consulta 1 -->
                         <article class="card-consulta">
                             <div class="consulta-topo">
                                 <span class="data">12/03/2024</span>
@@ -149,7 +130,6 @@
                             <p class="observacao">Observação: Sem reações adversas observadas. Próxima dose agendada para 12/06/2024.</p>
                         </article>
 
-                        <!-- Consulta 2 -->
                         <article class="card-consulta">
                             <div class="consulta-topo">
                                 <span class="data">12/06/2024</span>
@@ -160,7 +140,6 @@
                             <p class="observacao">Observação: Hemograma e bioquímica dentro dos parâmetros normais. Acompanhamento sem alterações.</p>
                         </article>
 
-                        <!-- Consulta 3 -->
                         <article class="card-consulta">
                             <div class="consulta-topo">
                                 <span class="data">12/09/2024</span>
@@ -199,29 +178,16 @@
                 </section>
             </main>
 
-            <!-- ==============================================================================
-                    Rodapé
-            ================================================================================ -->
+            <!-- Rodapé -->
             <footer>
                 <div class="redes-sociais">
                     <strong>Redes Sociais:</strong>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-instagram"></i>
-                        Instagram
-                    </a>
-                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
-                        <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
-                        WhatsApp
-                    </a>
-                    <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
-                        <i class="fa-brands fa-linkedin" style="font-size: 20px;"></i>
-                        LinkedIn
-                    </a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                    <a href="https://www.linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
-                <section class="final"></section>
-                <span>&copy; 2026 Clínica Vida & Saúde Veterinária. Todos os direitos reservados.</span>
+                <p>&copy; 2026 Clínica Vida & Saúde Veterinária. Todos os direitos reservados.</p>
             </footer>
         </div>
     </body>
 </html>
-        
