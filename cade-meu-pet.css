@@ -77,6 +77,27 @@ header.cabecalho-rastreamento {
 .btn-alertas:hover {
     background-color: var(--azul-hover);
 }
+.btn-voltar {
+    order: -1; /* Joga o botão para antes do h1 */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: #eef2ff;
+    color: #0d1684;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #dbeafe;
+    transform: translateX(-2px);
+}   
 
 /* ================= CONTEÚDO PRINCIPAL E CONTAINER DO MAPA ================= */
 main {

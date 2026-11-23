@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Vacinação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="controle-vacina.css">
+</head>
+<body>
+
+    <header>
+        <button
+            type="button"
+            class="btn-voltar"
+            onclick="window.history.length > 1 ? history.back() : window.location.href='dados-pet.html'"
+            title="Voltar"
+            aria-label="Voltar"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <h1>Controle de vacinação</h1>
+    </header>
+
+    <div class="container-principal">
+
+        <aside class="barra-lateral">
+            <img src="logo.jpg" alt="Logo da clínica" class="logo">
+
+            <nav>
+                <ul>
+                    <li><a href="inicio.html">Início</a></li>
+                    <li><a href="agendamento.html">Agendamento</a></li>
+                    <li><a href="dados-pet.html">Pets</a></li>
+                    <li><a href="prontuario.html">Prontuários</a></li>
+                    <li><a href="historico.html">Histórico</a></li>
+                    <li class="ativo"><a href="controle-vacina.html">Controle de vacina</a></li>
+                    <li><a href="cade-meu-pet.html">Cadê meu pet?</a></li>
+                </ul>
+            </nav>
+
+            <section class="card">
+                <h4>Central Veterinária</h4>
+                <p>Vacinação, protocolos e alertas em um só lugar.</p>
+            </section>
+        </aside>
+
+        <main>
+            <section class="descricao">
+                <h2>Vacinação do pet</h2>
+                <p>Registre vacinas, fabricantes, lotes e validades para acompanhar doses aplicadas e próximas aplicações.</p>
+            </section>
+
+            <form action="controle" method="POST" class="form-vacina">
+                
+                <fieldset class="form-grid">
+                    <label>
+                        Vacina
+                        <input type="text" name="vacina" placeholder="Exemplo: V8 / V10 / Antirrábica">
+                    </label>
+
+                    <label>
+                        Fabricante
+                        <input type="text" name="fabricante" placeholder="Exemplo: Zoetis / Virbac / Merial">
+                    </label>
+
+                    <label>
+                        Lote
+                        <input type="text" name="lote" placeholder="Exemplo: 2025-AB-001">
+                    </label>
+
+                    <label>
+                        Validade
+                        <input type="text" name="validade" placeholder="Exemplo: 31/12/2026" onfocus="(this.type='date')">
+                    </label>
+
+                    <label>
+                        Dose a ser aplicada
+                        <input type="text" name="dose" placeholder="Exemplo: Dose 2 / 3 doses">
+                    </label>
+
+                    <label>
+                        Próximas doses
+                        <input type="text" name="proxima-dose" placeholder="Definir data da próxima dose" onfocus="(this.type='date')">
+                    </label>
+
+                    <label>
+                        Espécie
+                        <select name="especie">
+                            <option value="cachorro" selected>Exemplo: Cachorro</option>
+                            <option value="gato">Gato</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Idade
+                        <input type="text" name="idade" placeholder="Exemplo: 12 meses">
+                    </label>
+
+                    <label>
+                        Protocolo por espécie e idade
+                        <input type="text" name="protocolo" placeholder="Exemplo: Calendário padrão para filhotes">
+                    </label>
+
+                    <label>
+                        Observação clínica
+                        <input type="text" name="observacao" placeholder="Exemplo: Sem reações adversas observadas">
+                    </label>
+                </fieldset>
+
+                <section class="rodape-formulario">
+                    <fieldset class="alertas-box">
+                        <legend>Alertas automáticos para o tutor</legend>
+                        <p>Configure quando o sistema deve notificara validade do lote.</p>
+
+                        <article class="alerta-item">
+                            <p class="alerta-titulo">
+                                <i class="fa-regular fa-bell"></i>
+                                <span>
+                                    <strong>Próxima dose</strong>
+                                    <small>Notificar 7 dias antes da data de validade</small>
+                                </span>
+                            </p>
+
+                            <label class="alerta-status">
+                                <span>Ativo</span>
+                                <input type="checkbox" name="alerta_ativo" checked disabled>
+                                <span class="slider"></span>
+                            </label>
+                        </article>
+
+                        <article class="alerta-item">
+                            <strong>Canais de notificação</strong>
+                            <label class="chip-canal">
+                                <input type="checkbox" name="canal_email" value="email" checked>
+                                <span>E-mail</span>
+                            </label>
+                        </article>
+                    </fieldset>
+
+                    <menu class="botoes-form">
+                        <button type="reset" class="btn-cancelar">Cancelar</button>
+                        <button type="submit" class="btn-salvar">Salvar</button>
+                    </menu>
+                </section>
+
+            </form>
+        </main>
+
+        <footer>
+            <nav class="redes-sociais">
+                <strong>Redes Sociais:</strong>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </nav>
+
+            <span>
+                &copy; 2026 Clínica Vida &amp; Saúde Veterinária. Todos os direitos reservados.
+            </span>
+        </footer>
+
+    </div>
+</body>
+</html>
