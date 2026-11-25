@@ -1,0 +1,349 @@
+:root {
+    --azul-principal: #0a178e;
+    --azul-hover: #071066;
+    --azul-claro-bg: #eef2ff;
+    --texto-escuro: #111827;
+    --borda-input: #6b7280;
+}
+
+/* ================= CABEÇALHO ================= */
+header {
+    grid-area: header;
+    background-color: #ffffff;
+    padding: 28px 44px 12px 44px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--azul-principal);
+    line-height: 1.1;
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: #eef2ff;
+    color: #0d1684;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-voltar:hover {
+    background-color: #dbeafe;
+    transform: translateX(-2px);
+}
+/* ================= MAIN E DESCRIÇÃO ================= */
+main {
+    grid-area: main;
+    background-color: #ffffff;
+    padding: 8px 44px 44px 44px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.descricao {
+    max-width: 720px;
+}
+
+.descricao h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--texto-escuro);
+    margin-bottom: 4px;
+}
+
+.descricao p {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--azul-principal);
+    line-height: 1.4;
+}
+
+/* ================= FORMULÁRIO EM 2 COLUNAS ================= */
+.form-vacina {
+    max-width: 1120px;
+    width: 100%;
+}
+
+.form-grid {
+    border: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 32px;
+}
+
+.form-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--texto-escuro);
+}
+
+.form-grid input,
+.form-grid select {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--borda-input);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--texto-escuro);
+    background-color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-grid input::placeholder {
+    color: #4b5563;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+    border-color: var(--azul-principal);
+    box-shadow: 0 0 0 3px rgba(10, 23, 142, 0.12);
+}
+
+/* ================= RODAPÉ DO FORMULÁRIO ================= */
+.rodape-formulario {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+}
+
+/* ================= CAIXA DE ALERTAS AUTOMÁTICOS ================= */
+.alertas-box {
+    flex: 1;
+    min-width: 340px;
+    max-width: 520px;
+    background-color: #f4f6fc;
+    border: 1px solid #9ca3af;
+    border-radius: 16px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.alertas-box legend {
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--texto-escuro);
+    margin-bottom: 2px;
+}
+
+.alertas-box > p {
+    font-size: 12.5px;
+    color: var(--azul-principal);
+    line-height: 1.35;
+}
+
+.alerta-item {
+    background-color: #ffffff;
+    border: 1px solid #9ca3af;
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.alerta-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.alerta-titulo i {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--azul-principal);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.alerta-titulo span {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.alerta-titulo strong {
+    font-size: 13.5px;
+    color: var(--texto-escuro);
+}
+
+.alerta-titulo small {
+    font-size: 12px;
+    color: var(--azul-principal);
+}
+
+/* Switch Ativo */
+.alerta-status {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.alerta-status input {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    width: 48px;
+    height: 26px;
+    background-color: #cbd5e1;
+    border-radius: 999px;
+    transition: background-color 0.25s ease;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    transition: transform 0.25s ease;
+}
+
+.alerta-status input:checked + .slider {
+    background-color: var(--azul-principal);
+}
+
+.alerta-status input:checked + .slider::before {
+    transform: translateX(22px);
+}
+
+/* Chip E-mail */
+.alerta-item > strong {
+    font-size: 13px;
+    color: var(--texto-escuro);
+}
+
+.chip-canal {
+    cursor: pointer;
+}
+
+.chip-canal input {
+    display: none;
+}
+
+.chip-canal span {
+    display: inline-block;
+    padding: 7px 18px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 700;
+    background-color: #e5e7eb;
+    color: #374151;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.chip-canal input:checked + span {
+    background-color: var(--azul-principal);
+    color: #ffffff;
+}
+
+/* ================= BOTÕES CANCELAR E SALVAR ================= */
+.botoes-form {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-cancelar,
+.btn-salvar {
+    min-width: 195px;
+    height: 48px;
+    border: none;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-cancelar {
+    background-color: #050826;
+}
+
+.btn-cancelar:hover {
+    background-color: #111845;
+}
+
+.btn-salvar {
+    background-color: var(--azul-principal);
+}
+
+.btn-salvar:hover {
+    background-color: var(--azul-hover);
+}
+
+/* ================= RESPONSIVIDADE ================= */
+@media (max-width: 900px) {
+    header,
+    main {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rodape-formulario {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .alertas-box {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .botoes-form {
+        flex-direction: column;
+    }
+
+    .btn-cancelar,
+    .btn-salvar {
+        width: 100%;
+    }
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadê meu pet? - Rastreamento</title>
+    
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- CSS oficial do Leaflet (Obrigatório para o mapa) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Seus arquivos CSS -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/cade-meu-pet.css">
+    <link rel="icon" href="/imagens/icone.png">
+
+</head>
+<body>
+
+    <header class="cabecalho-rastreamento">
+        <div class="titulo-grupo">
+            <h1>Rastreamento do Pet</h1>
+            <p>Acompanhe a localização e o status de saúde de seu pet em tempo real</p>
+        </div>
+
+        <div class="acoes-header">
+            <!-- Botão temporário para testar o movimento sem o ESP32 conectado -->
+            <button type="button" onclick="simularPassoPet()" class="btn-historico">
+                <i class="fa-solid fa-location-crosshairs"></i>&nbsp;Simular GPS
+            </button>
+            <a href="/paginas/historico.html" class="btn-historico">Histórico</a>
+            <button type="button" id="btn-alertas" class="btn-alertas">Alertas</button>
+        </div>
+
+        <button
+            type="button"
+            class="btn-voltar"
+            onclick="window.history.length > 1 ? history.back() : window.location.href='dados-pet.html'"
+            title="Voltar"
+            aria-label="Voltar"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+    </header>
+
+    <div class="container-principal">
+
+        <aside class="barra-lateral">
+            <img src="/imagens/logo.jpg" alt="Logo da clínica" class="logo">
+
+            <nav>
+                <ul>
+                    <li><a href="/paginas/inicio.html">Início</a></li>
+                    <li><a href="/paginas/agendamento.html">Agendamento</a></li>
+                    <li><a href="/paginas/dados-pet.html">Pets</a></li>
+                    <li><a href="/paginas/prontuario.html">Prontuários</a></li>
+                    <li><a href="/paginas/historico.html">Histórico</a></li>
+                    <li><a href="/paginas/controle-vacina.html">Controle de vacina</a></li>
+                    <li class="ativo"><a href="/paginas/cade-meu-pet.html">Cadê meu pet?</a></li>
+                </ul>
+            </nav>
+
+            <div class="card">
+                <h4>Central Veterinária</h4>
+                <p>Vacinação, protocolos e alertas em um só lugar.</p>
+            </div>
+        </aside>
+
+        <main>
+            <section class="mapa-container">
+                
+                <!-- CARD FLUTUANTE COM IDs PARA RECEBER OS DADOS -->
+                <article class="card-pet-flutuante">
+                    <div class="pet-topo">
+                        <img src="/imagens/icone.png" alt="Foto do pet" id="pet-foto" class="pet-avatar">
+                        <div class="pet-dados">
+                            <strong id="pet-nome">--</strong>
+                            <span id="pet-detalhes">--</span>
+                        </div>
+                    </div>
+
+                    <div class="pet-metricas">
+                        <div class="metrica">
+                            <span class="label">Bateria</span>
+                            <strong class="valor-bateria">
+                                <i class="fa-solid fa-battery-three-quarters"></i>
+                                <span id="pet-bateria">--%</span>
+                            </strong>
+                        </div>
+
+                        <div class="metrica">
+                            <span class="label">Distância</span>
+                            <strong id="pet-distancia" class="valor-distancia">-- km</strong>
+                        </div>
+                    </div>
+
+                    <div class="status-conexao">
+                        <span id="status-indicador" class="ponto-verde"></span>
+                        <span id="pet-status">Aguardando sinal...</span>
+                    </div>
+                </article>
+
+                <!-- CONTAINER DO MAPA (LEAFLET RENDERIZA AQUI DENTRO) -->
+                <div id="mapa" class="area-mapa"></div>
+
+            </section>
+        </main>
+
+        <footer>
+            <div class="redes-sociais">
+                <strong>Redes Sociais:</strong>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </div>
+        </footer>
+    </div>
+
+    <!-- Arquivo JS -->
+    <!-- 1. Biblioteca externa do Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- 2. O seu ficheiro JavaScript local -->
+    <script src="/js/teste.js"></script>
+</body>
+</html>

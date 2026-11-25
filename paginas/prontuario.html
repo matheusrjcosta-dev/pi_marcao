@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/css/prontuario.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="icon" href="/imagens/icone.png (1).png">
     <title>Prontuário</title>
 </head>
 <body>
@@ -12,7 +14,7 @@
         <button
             type="button"
             class="btn-voltar"
-            onclick="window.history.length > 1 ? history.back() : window.location.href='dados-pet.html'"
+            onclick="window.history.length > 1 ? history.back() : window.location.href='/paginas/dados-pet.html'"
             title="Voltar"
             aria-label="Voltar"
         >
@@ -31,13 +33,13 @@
 
                 <nav>
                     <ul>
-                        <li><a href="/paginas/inicio.html">Início</a></li>
+                        <li><a href="/paginas/inicio.html">Início </a></li>
                         <li><a href="/paginas/agendamento.html">Agendamento</a></li>
-                        <li><a href="/paginas/dados-pet.html">Pet</a></li>
-                        <li class="ativo"><a href="/paginas/prontuario.html">Prontuários<span class="seta">&rsaquo;</span></a></li>
+                        <li><a href="/paginas/dados-pet.html">Pets</a></li>
+                        <li class="ativo"><a href="/paginas/prontuario.html">Prontuários</a></li>
                         <li><a href="/paginas/historico.html">Histórico</a></li>
-                        <li><a href="/paginas/controle_de_vacina">Controle de vacina</a></li>
-                        <li><a href="/paginas/cade-meu-pet?">Cadê meu pet?</a></li>
+                        <li><a href="/paginas/controle-vacina.html">Controle de vacina</a></li>
+                        <li><a href="/paginas/cade-meu-pet.html">Cadê meu pet?</a></li>
                     </ul>
                 </nav>
             </div>
@@ -54,7 +56,7 @@
         <h2>Dados do Pet</h2>
 
             <div class="perfil-pet">
-                <img src="/imagens/beto." alt="Foto do pet Beto" class="pet-foto-prontuario">
+                <img src="/imagens/beto.jpg" alt="Foto do pet Beto" class="pet-foto-prontuario">
 
                 <div class="dados-pet-info">
                     <p><strong>Nome:</strong> Beto</p>
@@ -101,6 +103,7 @@
     <i class="fa-brands fa-linkedin" style="font-size: 20px;"></i>
     LinkedIn
   </a>
+        </div>
    <section class="final"></section>
         <span>&copy; 2026 Clínica Vida & Saúde Veterinária. Todos os direitos reservados.</span>
     </footer>
